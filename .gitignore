@@ -6,7 +6,6 @@ log/*.log
 tmp/**/*
 test/hello/**/*
 .project
-Gemfile
 modified:   Gemfile.lock
 Gemfile.GITHUB
 .rvmrc
