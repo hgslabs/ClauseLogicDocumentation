@@ -1,0 +1,12 @@
+.bundle
+clsadmin.pem
+config/database.yml
+db/*.sqlite3
+log/*.log
+tmp/**/*
+test/hello/**/*
+.project
+Gemfile
+modified:   Gemfile.lock
+Gemfile.GITHUB
+.rvmrc
