@@ -1,0 +1,20 @@
+<div class="row-fluid">
+  <h2>Specifying Indicators</h2>
+
+  <p>Indicators provide information about the procurement document: Total Value, Type of Contract, Procedures Used, etc. There are 3 types of Indicators: PICK_MANY, PICK_ONE, and NONE.</p>
+
+  <h3>PICK_MANY Indicators</h3>
+  <p>A Pick Many Indicator has a list of pre-defined values to choose from. As the name suggests, you may pick more than one of the available values.</p>
+
+  <h3>PICK_ONE Indicators</h3>
+  <p>A Pick One Indicator also has a list of pre-defined values to choose from, but only one value may be selected.</p>
+
+  <h3>NONE Indicators</h3>
+  <p>A NONE Indicator does not have pre-defined values and only one value may be provided.</p>
+
+  <h3>How to Specify Indicators</h3>
+  <p>There are 2 ways to specify indicators: API or Clause Logic GUI. From the API, Indicators can be specified using the following resource: PUT procurement_documents/:token/indicators. Indicator values specified through the API cannot be modified from the Clause Logic GUI.</p>
+
+  <h3>Clause Logic Access Token (CLAT) Required</h3>
+  <p>Any modification to a procurement document requires a Clause Logic Access Token (CLAT). Use the following resource to obtain a CLAT: POST procurement_documents/:token/clats.</p>
+  </div>

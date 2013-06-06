@@ -1,0 +1,25 @@
+<div class="row-fluid">
+  <h2>Creating a Procurement Document</h2>
+
+  <h3>Required Information</h3>
+  <p>There is only 1 piece of information needed in order to create a Procurement Document:</p>
+  <p><strong>Number</strong>: The Procurement Document Number (i.e. Contract Number)</p>
+  <p>The procurement document is created using the following resource: <a href="/docs/resources/procurement_document/procurement_document_create">POST procurement_documents</a></p>
+
+  <h3>Additional Information</h3>
+  <p>Once created, you will need to provide additional information about the procurement document in order for the Clause Logic Service to determine the appropriate clauses/provisions for the procurement document.</p>
+
+  <table class="table">
+    <tr>
+      <td>Regulations</td>
+      <td>Specify which regulations (FAR, DFARS, etc.) apply to the procurement document.</td>
+    </tr>
+    <tr>
+      <td>Indicators</td>
+      <td>Specify details about the procurement document: Total Value, Type of Contract, Procedures Used, etc.</td>
+    </tr>
+  </table>
+
+  <p>Regulations can be specified using the following resource: <a href="/docs/resources/procurement_document/regulations_update">PUT procurement_documents/:token/regulations</a></p>
+  <p>Indicators can be specified using the following resource: <a href="/docs/resources/procurement_document/indicators_update">PUT procurement_documents/:token/indicators</a></p>
+</div>

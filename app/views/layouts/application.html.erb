@@ -1,14 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClauseLogicDocumentation</title>
+  <title>Clause Logic API Documentation</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Clause Logic API Documentation</a>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
+  <div class="container-fluid">
+    <div class="row-fluid row">
+      <div class="span3">
+        <div class="well sidebar-nav-fixed">
+          <ul class="nav nav-list">
 
+            <li><strong><%= link_to "Getting Started", getting_started_path %></strong>
+              <ul>
+                <li><%= link_to "Create a Procurement Document", getting_started_create_procurement_document_path %></li>
+                <li><%= link_to "Specify Indicators", getting_started_specify_indicators_path %></li>
+                <li><%= link_to "Specify Regulations", getting_started_specify_regulations_path %></li>
+                <li><%= link_to "Launch the CL GUI", getting_started_launch_cl_gui_path %></li>
+              </ul>
+            </li>
+            
+            <li><strong><%= link_to "Authentication", authentication_path %></strong>
+              <ul>
+                <li><%= link_to "Request Types", authentication_request_types_path %></li>
+                <li><%= link_to "Creating a Signature", authentication_creating_a_signature_path %></li>
+              </ul>
+            </li>
+            
+            <li><a href=""><strong>REST API</strong></a>
+              <ul>
+                <li><a href="">Overview</a></li>
+                <li><a href="">Resource Objects</a></li>
+                <li><a href="">Endpoints</a>
+                  <ul>
+                    <li><a href="">CLATs</a></li>
+                    <li><a href="">Clauses</a></li>
+                    <li><a href="">Indicators</a></li>
+                    <li><a href="">Prescriptions</a></li>
+                    <li><a href="">Procurement Documents</a></li>
+                    <li><a href="">Regulations</a></li>
+                  </ul>
+                </li>
+                <li><a href="">Error Codes and Responses</a></li>
+              </ul>
+            </li>
+
+            <li><a href=""><strong>Tutorials</strong></a>
+              <ul>
+                <li><a href="">Creating a Procurement Document</a></li>
+                <li><a href="">Adding Regulations</a></li>
+                <li><a href="">Adding Indicators</a></li>
+              </ul>
+            </li>
+            
+            <li><a href=""><strong>Clients</strong></a>
+              <ul>
+                <li><a href="">Java</a></li>
+                <li><a href="">PHP</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div><!--/.well -->
+      </div><!--/span-->
+
+      <div class="span9 span-fixed-sidebar">
+       <%= yield %>
+      </div><!--/span-->
+    </div><!--/row-->
+
+  </div><!--/.fluid-container-->
 </body>
 </html>

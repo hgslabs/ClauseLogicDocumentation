@@ -1,4 +1,15 @@
 ClauseLogicDocumentation::Application.routes.draw do
+
+  get "authentication" => "authentication#index"
+  get "authentication/request_types" => "authentication#request_types"
+  get "authentication/creating_a_signature" => "authentication#creating_a_signature"
+
+  get "getting_started" => "getting_started#index"
+  get "getting_started/create_procurement_document" => "getting_started#create_procurement_document"
+  get "getting_started/specify_indicators" => "getting_started#specify_indicators"
+  get "getting_started/specify_regulations" => "getting_started#specify_regulations"
+  get "getting_started/launch_cl_gui" => "getting_started#launch_cl_gui"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +59,7 @@ ClauseLogicDocumentation::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'index#index'
 
   # See how all your routes lay out with "rake routes"
 
