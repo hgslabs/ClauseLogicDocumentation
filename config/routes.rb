@@ -1,5 +1,27 @@
 ClauseLogicDocumentation::Application.routes.draw do
 
+  get "endpoint/clats"
+
+  get "endpoint/clauses"
+
+  get "endpoint/indicators"
+
+  get "endpoint/prescriptions"
+
+  get "endpoint/procurement_documents"
+
+  get "endpoint/regulations"
+
+  get "rest/index"
+
+  get "rest/overview"
+
+  get "rest/endpoints"
+
+  get "rest/resource_objects"
+
+  get "rest/error_codes_responses"
+
   get "authentication" => "authentication#index"
   get "authentication/request_types" => "authentication#request_types"
   get "authentication/creating_a_signature" => "authentication#creating_a_signature"
