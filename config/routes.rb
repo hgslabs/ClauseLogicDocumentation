@@ -21,14 +21,14 @@ ClauseLogicDocumentation::Application.routes.draw do
   get "rest/resource_objects/timestamp" => "resource_objects#timestamp"
 
   get "rest/endpoints" => "rest#endpoints"
-  get "rest/endpoint/clats" => "endpoint#clats"
-  get "rest/endpoint/clauses" => "endpoint#clauses"
-  get "rest/endpoint/indicators" => "endpoint#indicators"
-  get "rest/endpoint/prescriptions" => "endpoint#prescriptions"
-  get "rest/endpoint/procurement_documents" => "endpoint#procurement_documents"
-  get "rest/endpoint/regulations" => "endpoint#regulations"
-  get "rest/endpoint/sections" => "endpoint#sections"
-  get "rest/endpoint/timestamp" => "endpoint#timestamp"
+  get "rest/endpoints/clats" => "endpoint#clats"
+  get "rest/endpoints/clauses" => "endpoint#clauses"
+  get "rest/endpoints/indicators" => "endpoint#indicators"
+  get "rest/endpoints/prescriptions" => "endpoint#prescriptions"
+  get "rest/endpoints/procurement_documents" => "endpoint#procurement_documents"
+  get "rest/endpoints/regulations" => "endpoint#regulations"
+  get "rest/endpoints/sections" => "endpoint#sections"
+  get "rest/endpoints/timestamp" => "endpoint#timestamp"
 
 
   
