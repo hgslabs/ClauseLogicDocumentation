@@ -1,0 +1,82 @@
+<div class="row-fluid">
+  <h2>ProcurementDocument</h2>
+<p>A Procurement Document is...</p>
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Token</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Procurement Document Token<br />
+          <br />
+          <pre class="prettyprint">&lt;Token&gt;c9de297b5ba56cbe22537138e9302a5d&lt;/Token&gt;</pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Procurement Document Number<br />
+          <br />
+          <pre class="prettyprint">&lt;Number&gt;FY2012-ABC123-0001&lt;/Number&gt;</pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>RunRules</td>
+        <td>Element</td>
+        <td>Boolean</td>
+        <td>
+          Indicates when the rules need to be run to bring the procurement document up to date.<br />
+          <br />
+          <pre class="prettyprint">&lt;RunRules&gt;true&lt;/RunRules&gt;</pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>RulesRanAt</td>
+        <td>Element</td>
+        <td>DateTime</td>
+        <td>
+          The last time the rules were run.<br />
+          <br />
+          <pre class="prettyprint">&lt;RulesRanAt&gt;07/01/2012 08:00:03&lt;/RulesRanAt&gt;</pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>CreatedAt</td>
+        <td>Element</td>
+        <td>DateTime</td>
+        <td>
+          When the procurement document was created.<br />
+          <br />
+          <pre class="prettyprint">&lt;CreatedAt&gt;07/01/2012 08:00:03&lt;/CreatedAt&gt;</pre> 
+        </td>
+      </tr>
+    </table>
+</div>
+
+<div class="row-fluid">
+    <h3>Examples</h3>
+  <ul class="nav nav-tabs" id="exampleTabs">
+    <li class="active"><a href="#one">Example</a></li>
+  </ul>
+ 
+  <div class="tab-content">
+    <div class="tab-pane active" id="one">
+      <pre class="prettyprint linenums">
+&lt;ProcurementDocument&gt;
+  &lt;Token&gt;c9de297b5ba56cbe22537138e9302a5d&lt;/Token&gt;
+  &lt;Number&gt;FY2012-ABC123-0001&lt;/Number&gt;
+  &lt;RunRules&gt;false&lt;/RunRules&gt;
+  &lt;RulesRanAt&gt;07/01/2012 08:00:03&lt;/RulesRanAt&gt;
+  &lt;CreatedAt&gt;01/01/2012 08:00:03&lt;/CreatedAt&gt;
+&lt;/ProcurementDocument&gt;
+    </div>
+  </div>
+</div>

@@ -1,31 +1,46 @@
 ClauseLogicDocumentation::Application.routes.draw do
 
-  get "endpoint/clats"
+  ##
+  # REST
+  get "rest" => "rest#index"
+  get "rest/overview" => "rest#overview"
+  get "rest/error_codes_responses" => "rest#error_codes_responses"
 
-  get "endpoint/clauses"
+  get "rest/resource_objects" => "rest#resource_objects"
+  get "rest/resource_objects/clat" => "resource_objects#clat"
+  get "rest/resource_objects/clause" => "resource_objects#clause"
+  get "rest/resource_objects/clause_revision" => "resource_objects#clause_revision"
+  get "rest/resource_objects/clause_variation" => "resource_objects#clause_variation"
+  get "rest/resource_objects/indicator" => "resource_objects#indicator"
+  get "rest/resource_objects/indicator_value" => "resource_objects#indicator_value"
+  get "rest/resource_objects/prescription" => "resource_objects#prescription"
+  get "rest/resource_objects/prescription_revision" => "resource_objects#prescription_revision"
+  get "rest/resource_objects/procurement_document" => "resource_objects#procurement_document"
+  get "rest/resource_objects/regulation" => "resource_objects#regulation"
+  get "rest/resource_objects/section" => "resource_objects#section"
+  get "rest/resource_objects/timestamp" => "resource_objects#timestamp"
 
-  get "endpoint/indicators"
+  get "rest/endpoints" => "rest#endpoints"
+  get "rest/endpoint/clats" => "endpoint#clats"
+  get "rest/endpoint/clauses" => "endpoint#clauses"
+  get "rest/endpoint/indicators" => "endpoint#indicators"
+  get "rest/endpoint/prescriptions" => "endpoint#prescriptions"
+  get "rest/endpoint/procurement_documents" => "endpoint#procurement_documents"
+  get "rest/endpoint/regulations" => "endpoint#regulations"
+  get "rest/endpoint/sections" => "endpoint#sections"
+  get "rest/endpoint/timestamp" => "endpoint#timestamp"
 
-  get "endpoint/prescriptions"
 
-  get "endpoint/procurement_documents"
+  
 
-  get "endpoint/regulations"
-
-  get "rest/index"
-
-  get "rest/overview"
-
-  get "rest/endpoints"
-
-  get "rest/resource_objects"
-
-  get "rest/error_codes_responses"
-
+  ##
+  # Authentication
   get "authentication" => "authentication#index"
   get "authentication/request_types" => "authentication#request_types"
   get "authentication/creating_a_signature" => "authentication#creating_a_signature"
 
+  ##
+  # Geting Started
   get "getting_started" => "getting_started#index"
   get "getting_started/create_procurement_document" => "getting_started#create_procurement_document"
   get "getting_started/specify_indicators" => "getting_started#specify_indicators"

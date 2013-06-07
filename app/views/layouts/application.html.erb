@@ -3,8 +3,18 @@
 <head>
   <title>Clause Logic API Documentation</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script>
+  $(document).ready(function() {
+    $('#exampleTabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+  });
+</script>
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
@@ -42,10 +52,25 @@
               </ul>
             </li>
             
-            <li><a href=""><strong>REST API</strong></a>
+            <li><strong><%= link_to "REST API", rest_path %></strong>
               <ul>
-                <li><a href="">Overview</a></li>
-                <li><a href="">Resource Objects</a></li>
+                <li><%= link_to "Overview", rest_overview_path %></li>
+                <li><%= link_to "Resource Objects", rest_resource_objects_path %>
+                  <ul>
+                    <li><%= link_to "CLAT", rest_resource_objects_clat_path %></li>
+                    <li><%= link_to "Clause", rest_resource_objects_clause_path %></li>
+                    <li><%= link_to "Clause Revision", rest_resource_objects_clause_revision_path %></li>
+                    <li><%= link_to "ClauseVariation", rest_resource_objects_clause_variation_path %></li>
+                    <li><%= link_to "Indicator", rest_resource_objects_indicator_path %></li>
+                    <li><%= link_to "Indicator Value", rest_resource_objects_indicator_value_path %></li>
+                    <li><%= link_to "Prescription", rest_resource_objects_prescription_path %></li>
+                    <li><%= link_to "Prescription Revision", rest_resource_objects_prescription_revision_path %></li>
+                    <li><%= link_to "ProcurementDocument", rest_resource_objects_procurement_document_path %></li>
+                    <li><%= link_to "Regulation", rest_resource_objects_regulation_path %></li>
+                    <li><%= link_to "Section", rest_resource_objects_section_path %></li>
+                    <li><%= link_to "Timestamp", rest_resource_objects_timestamp_path %></li>
+                  </ul>
+                </li>
                 <li><a href="">Endpoints</a>
                   <ul>
                     <li><a href="">CLATs</a></li>

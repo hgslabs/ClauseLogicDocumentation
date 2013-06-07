@@ -1,0 +1,79 @@
+<div class="row-fluid">
+  <h2>Prescription</h2>
+  <p>A prescription is...</p>
+
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint">&lt;Prescription id=&quot;1&quot;&gt;...&lt;/Prescription&gt;</pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Prescription Number<br />
+          <br />
+          <pre class="prettyprint">&lt;Number&gt;3.503-2&lt;/Number&gt;</pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Regulation</td>
+        <td>Element</td>
+        <td><a href="/docs/resource_objects/library/regulation">Regulation</a></td>
+        <td>
+          The regulation to which the prescription belongs<br />
+          <br />
+          <pre class="prettyprint">&lt;Regulation id=&quot;1&quot;&gt;...&lt;/Regulation&gt;</pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>Revision</td>
+        <td>Element</td>
+        <td><a href="/docs/resource_objects/library/prescription_revision">Prescription Revision</a></td>
+        <td>
+          The effective revision for this prescription<br />
+          <br />
+          <pre class="prettyprint">&lt;Revision id=&quot;6&quot;&gt;...&lt;/Revision&gt;</pre> 
+        </td>
+      </tr>
+    </table>
+
+</div>
+
+<div class="row-fluid">
+    <h3>Examples</h3>
+  <ul class="nav nav-tabs" id="exampleTabs">
+    <li class="active"><a href="#one">Example</a></li>
+  </ul>
+ 
+  <div class="tab-content">
+    <div class="tab-pane active" id="one">
+        <pre class="prettyprint linenums">
+&lt;Prescription id=&quot;1&quot;&gt;
+  &lt;Number&gt;52.202-1&lt;/Number&gt;
+  &lt;Regulation id=&quot;1&quot;&gt;FAR&lt;/Regulation&gt;
+  &lt;Revision id=&quot;1&quot;&gt;
+    &lt;Body&gt;
+      &lt;![CDATA[Prescription Text]]&gt;
+    &lt;/Body&gt;
+    &lt;EffectiveStartDate&gt;01/01/2012&lt;/EffectiveStartDate&gt;
+    &lt;EffectiveEndDate/&gt;
+  &lt;/Revision&gt;
+&lt;/Prescription&gt;
+</pre>
+    </div>
+  </div>
+</div>
