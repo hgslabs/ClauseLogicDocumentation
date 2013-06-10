@@ -16,4 +16,10 @@ class EndpointController < ApplicationController
 
   def regulations
   end
+
+  def sections
+  end
+
+  def timestamp
+  end
 end

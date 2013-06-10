@@ -7,8 +7,68 @@
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="library"></div>
-    <div class="tab-pane active" id="procurement_document"></div>
+    <div class="tab-pane active" id="library">
+      <h3>Routes</h3>
+      <table class="table">
+        <thead>
+          <th>Request</th>
+          <th>URL</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#get">GET</a></td>
+            <td>clauses</td>
+            <td>Returns all clauses having a revision that is currently effective.</td>
+          </tr>
+          <tr>
+            <td><a href="#post">GET</a></td>
+            <td>clauses/:id</td>
+            <td>Returns a single clause with its currently effective revision.</td>
+          </tr>
+          <tr>
+            <td><a href="#get-single">GET</a></td>
+            <td>clauses/:id/revisions</td>
+            <td>Returns all revisions for a clause.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    
+    <div class="tab-pane" id="procurement_document">
+      <h3>Routes</h3>
+      <table class="table">
+        <thead>
+          <th>Request</th>
+          <th>URL</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#get">GET</a></td>
+            <td>procurement_documents/:token/clauses</td>
+            <td>Returns all clauses for a Procurement Document.</td>
+          </tr>
+          <tr>
+            <td><a href="#post">POST</a></td>
+            <td>procurement_documents/:token/clauses</td>
+            <td>Creates a single clause for a Procurement Document.</td>
+          </tr>
+          <tr>
+            <td><a href="#get">GET</a></td>
+            <td>procurement_documents/:token/clauses/:id</td>
+            <td>Returns a single clause for a Procurement Document.</td>
+          </tr>
+          <tr>
+            <td><a href="#delete">DELETE</a></td>
+            <td>procurement_documents/:token/clauses/:id</td>
+            <td>Deletes a single clause for a Procurement Document.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
 </div>

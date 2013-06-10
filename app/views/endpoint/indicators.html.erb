@@ -7,8 +7,62 @@
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="library"></div>
-    <div class="tab-pane active" id="procurement_document"></div>
+    <div class="tab-pane active" id="library">
+      <h3>Routes</h3>
+      <table class="table">
+        <thead>
+          <th>Request</th>
+          <th>URL</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#get">GET</a></td>
+            <td>indicators</td>
+            <td>Returns all indicators.</td>
+          </tr>
+          <tr>
+            <td><a href="#post">GET</a></td>
+            <td>indicators/:id</td>
+            <td>Returns a single indicator.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="tab-pane" id="procurement_document">
+      <h3>Routes</h3>
+      <table class="table">
+        <thead>
+          <th>Request</th>
+          <th>URL</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#get">GET</a></td>
+            <td>procurement_documents/:token/indicators</td>
+            <td>Returns all indicators for a Procurement Document.</td>
+          </tr>
+          <tr>
+            <td><a href="#post">PUT</a></td>
+            <td>procurement_documents/:token/indicators</td>
+            <td>Updates indicators for a Procurement Document.</td>
+          </tr>
+          <tr>
+            <td><a href="#get">GET</a></td>
+            <td>procurement_documents/:token/indicators/:id</td>
+            <td>Returns a single indicator for a Procurement Document.</td>
+          </tr>
+          <tr>
+            <td><a href="#delete">PUT</a></td>
+            <td>procurement_documents/:token/indicators/:id</td>
+            <td>Updates a single indicator for a Procurement Document.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
 </div>
