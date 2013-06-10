@@ -1,0 +1,40 @@
+<% content_for :page_header do %>
+  <div class="row">
+    <div class="span12">
+      <h1>Documentation</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>Getting started with Clause Logic is easy. Jump right into the API Documentation or check out our Getting Started guides.</p>
+<br />
+<div class="row">
+  <div class="span6">
+    <h3>Getting Started</h3>
+    <br />
+    <ul>
+      <li><%= link_to 'Create a Procurement Document', guides_create_procurement_document_path %></li>
+      <li><%= link_to 'Specify Indicators', guides_specify_indicators_path %></li>
+      <li><%= link_to 'Specify Regulations', guides_specify_regulations_path %></li>
+      <li><%= link_to 'Launch the CL GUI', guides_launch_gui_path %></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>REST API</h3>
+    <br />
+    <ul>
+      <li><%= link_to 'Overview', api_overview_path %></li>
+      <li><%= link_to 'Resource Object Documentation', resource_objects_path %></li>
+      <li><%= link_to 'Resource Documentation', resources_path %></li>
+      <li><%= link_to 'Error Codes and Responses', api_errors_path %></li>
+    </ul>
+    <br />
+    <h3>Authentication</h3>
+    <br />
+    <ul>
+      <li><%= link_to 'Request Types', authentication_request_types_path %></li>
+      <li><%= link_to 'Creating a Signature', authentication_signature_path %></li>
+    </ul>
+    <br />
+  </div>
+</div>

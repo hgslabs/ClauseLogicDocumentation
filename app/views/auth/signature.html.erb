@@ -1,0 +1,125 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li class="active">Authentication: Signing Requests</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Signing Requests</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>Signed and Protected Requests require that the request be signed using your API Key and Secret.  Below is the list of parameters used in generating the request signature.</p>
+<table class="table">
+  <tr>
+    <th>Parameter</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>api_key</td>
+    <td>The unique API Key assigned to the registered application.</td>
+  </tr>
+  <tr>
+    <td>api_secret</td>
+    <td>The unique API Secret assigned to the registered application. KEEP THIS A SECRET.</td>
+  </tr>
+  <tr>
+    <td>clat</td>
+    <td>Clause Logic Access Token.  This is only used in protected requests.</td>
+  </tr>
+  <tr>
+    <td>clat_secret</td>
+    <td>The unique secret associated with a CLAT.  This is only used in protected requests.</td>
+  </tr>
+  <tr>
+    <td>nonce</td>
+    <td>A single use number or string.</td>
+  </tr>
+  <tr>
+    <td>timestamp</td>
+    <td>The current time in seconds (Unix Timestamp)</td>
+  </tr>
+  <tr>
+    <td>request_method</td>
+    <td>The HTTP method used for the request: GET, PUT, POST, DELETE.</td>
+  </tr>
+  <tr>
+    <td>request_uri</td>
+    <td>The URI of the API endpoint.</td>
+  </tr>
+</table>
+
+<h3>Constructing the Base String</h3>
+<p>In order to generate a signature, you must first generate a base string by concatenating the parameters listed above.  These must be concatenated in the correct order (see below).</p>
+<div class="well">
+  <table>
+    <tr>
+      <td width="200">request_method</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>request_uri</td>
+      <td>/api/v1/clauses</td>
+    </tr>
+    <tr>
+      <td>api_key</td>
+      <td>57ccd80be80eb79f232ea178a536d675</td>
+    </tr>
+    <tr>
+      <td>api_secret</td>
+      <td>db353a79715b8fb373a358829b4b7fb3</td>
+    </tr>
+    <tr>
+      <td>clat</td>
+      <td>c357d4cc988ff5d4b446e4e7e8fdaa2d</td>
+    </tr>
+    <tr>
+      <td>clat_secret</td>
+      <td>c3c1fe2d8513cc1c2c0cfbbe0d78f616</td>
+    </tr>
+    <tr>
+      <td>nonce</td>
+      <td>bfd622c79280cd8b8363a00d3aaf8c2a</td>
+    </tr>
+    <tr>
+      <td>timestamp</td>
+      <td>1312248743</td>
+    </tr>
+    <tr>
+      <td>request_body</td>
+      <td><%= @request_body %></td>
+    </tr>
+  </table>
+</div>
+<p>The base strings are ordered as follows:</p>
+<div class="well">
+  <strong>Signed Request:</strong> <%=h "request_method&request_uri&api_key&nonce&timestamp&request_body" %><br />
+  <strong>Protected Request:</strong> <%=h "request_method&request_uri&api_key&nonce&timestamp&clat&request_body" %>
+</div>
+<p>The constructed base strings are as follows:</p>
+<div class="well">
+  <strong>Signed Request Base String:</strong>
+<%=h 'POST&/api/v1/clauses&57ccd80be80eb79f232ea178a536d675&bfd622c79280cd8b8363a00d3aaf8c2a&1312248743&<?xml version="1.0" encoding="UTF-8"?><Request><Id>1743</Id><Name>John</Name></Request>' %><br />
+<br />
+<strong>Protected Request Base String:</strong>
+<%=h 'POST&/api/v1/clauses&57ccd80be80eb79f232ea178a536d675&bfd622c79280cd8b8363a00d3aaf8c2a&1312248743&c357d4cc988ff5d4b446e4e7e8fdaa2d&<?xml version="1.0" encoding="UTF-8"?><Request><Id>1743</Id><Name>John</Name></Request>' %>
+</div>
+
+<h3>Signing the Request</h3>
+<p>Once the base string is constructed, sign the request using HMAC-SHA256.  The key used for signing depends on the request type.  Note the trailing &amp; for Signed requests.</p>
+<div class="well">
+  <strong>Signed Request:</strong> api_secret&amp;<br />
+  <strong>Protected Request:</strong> api_secret&amp;clat_secret
+</div>
+<p>The appropriate keys would therefore be:</p>
+<div class="well">
+  <strong>Signed Request:</strong> db353a79715b8fb373a358829b4b7fb3&amp;<br />
+  <strong>Protected Request:</strong> db353a79715b8fb373a358829b4b7fb3&amp;c3c1fe2d8513cc1c2c0cfbbe0d78f616
+</div>
+<p>And the signatures are:</p>
+<div class="well">
+  <strong>Signed Request:</strong> bbaba543ee7bdf8ea2a3162ab99979ef59a7560ee14a8547f9ce43ef64b86ae3<br />
+  <strong>Protected Request:</strong> 49f11efc5d4f17acee69ff2f3b022e2b57f1914e4c25d814aea85a4d0f9c784f
+</div>

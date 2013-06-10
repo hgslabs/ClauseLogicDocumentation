@@ -9,3 +9,4 @@ test/hello/**/*
 modified:   Gemfile.lock
 Gemfile.GITHUB
 .rvmrc
+*.DS_Store

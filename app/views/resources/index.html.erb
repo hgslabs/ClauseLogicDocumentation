@@ -1,0 +1,243 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li class="active">Resources</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Resources</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span6">
+    <h3>Library Resources</h3>
+    <br />
+    <ul>
+      <li><%= link_to 'Clauses', anchor: 'Clauses' %></li>
+      <li><%= link_to 'Indicators', anchor: 'Indicators' %></li>
+      <li><%= link_to 'Prescriptions', anchor: 'Prescriptions' %></li>
+      <li><%= link_to 'Regulations', anchor: 'Regulations' %></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>Procurement Document Resources</h3>
+    <br />
+    <ul>
+      <li><%= link_to 'CLATs', anchor: 'CLATs' %></li>
+      <li><%= link_to 'Clauses', anchor: 'PDClauses' %></li>
+      <li><%= link_to 'Indicators', anchor: 'PDIndicators' %></li>
+      <li><%= link_to 'Procurement Documents', anchor: 'ProcurementDocuments' %></li>
+      <li><%= link_to 'Regulations', anchor: 'PDRegulations' %></li>
+    </ul>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="span12">
+
+    <h3><a name="Clauses">Clauses (Library)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET clauses', resources_library_clauses_path %></td>
+        <td>Returns all clauses having a revision that is currently effective.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET clauses/:id', resources_library_clause_path %></td>
+        <td>Returns a single clause with its currently effective revision.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET clauses/:id/revisions', resources_library_clause_revisions_path %></td>
+        <td>Returns all revisions for a clause.</td>
+      </tr>
+    </table>
+
+    <h3><a name="Indicators">Indicators (Library)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET indicators', resources_library_indicators_path %></td>
+        <td>Returns all indicators.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET indicators/:id', resources_library_indicator_path %></td>
+        <td>Returns a single indicator.</td>
+      </tr>
+    </table>
+
+    <h3><a name="Prescriptions">Prescriptions (Library)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET prescriptions', resources_library_prescriptions_path %></td>
+        <td>Returns all prescriptions having a revision that is currently effective.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET prescriptions/:id', resources_library_prescription_path %></td>
+        <td>Returns a single prescription with its currently effective revision.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET prescriptions/:id/revisions', resources_library_prescription_revisions_path %></td>
+        <td>Returns all revisions for a prescription.</td>
+      </tr>
+    </table>
+
+    <h3><a name="Regulations">Regulations (Library)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET regulations', resources_library_regulations_path %></td>
+        <td>Returns all regulations.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET regulations/:id', resources_library_regulation_path %></td>
+        <td>Returns a single regulation.</td>
+      </tr>
+    </table>
+    
+    <h3><a name="CLATs">CLATs (Procurement Document)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/clats', resources_procurement_document_clats_path %></td>
+        <td>Returns all CLATs for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'POST procurement_documents/:token/clats', resources_procurement_document_clat_create_path %></td>
+        <td>Creates a new CLAT for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/clats/:id', resources_procurement_document_clat_path %></td>
+        <td>Returns a single CLAT for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'PUT procurement_documents/:token/clats/:id/extend', resources_procurement_document_clat_extend_path %></td>
+        <td>Extends the duration of the CLAT for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'PUT procurement_documents/:token/clats/:id/expire', resources_procurement_document_clat_expire_path %></td>
+        <td>Expires the CLAT for a Procurement Document.</td>
+      </tr>
+    </table>
+    
+    <h3><a name="PDClauses">Clauses (Procurement Document)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/clauses', resources_procurement_document_clauses_path %></td>
+        <td>Returns all clauses for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'POST procurement_documents/:token/clauses', resources_procurement_document_clause_create_path %></td>
+        <td>Creates a single clause for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/clauses/:id', resources_procurement_document_clause_path %></td>
+        <td>Returns a single clause for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'DELETE procurement_documents/:token/clauses/id', resources_procurement_document_clause_delete_path %></td>
+        <td>Deletes a single clause for a Procurement Document.</td>
+      </tr>
+    </table>
+    
+    <h3><a name="PDIndicators">Indicators (Procurement Document)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/indicators', resources_procurement_document_indicators_path %></td>
+        <td>Returns all indicators for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'PUT procurement_documents/:token/indicators', resources_procurement_document_indicators_update_path %></td>
+        <td>Updates indicators for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/indicators/:id', resources_procurement_document_indicator_path %></td>
+        <td>Returns a single indicator for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'PUT procurement_documents/:token/indicators/id', resources_procurement_document_indicator_update_path %></td>
+        <td>Updates a single indicator for a Procurement Document.</td>
+      </tr>
+    </table>
+    
+    <h3><a name="ProcurementDocuments">Procurement Document</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents', resources_procurement_document_procurement_documents_path %></td>
+        <td>Returns all Procurement Documents.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'POST procurement_documents', resources_procurement_document_procurement_document_create_path %></td>
+        <td>Creates a new Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token', resources_procurement_document_procurement_document_path %></td>
+        <td>Returns a single Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'PUT procurement_documents/:token', resources_procurement_document_procurement_document_update_path %></td>
+        <td>Updates a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/launch_gui', resources_procurement_document_procurement_document_launch_gui_path %></td>
+        <td>Launch the Clause Logic GUI for this procurement document.</td>
+      </tr>
+    </table>
+
+    <h3><a name="PDRegulations">Regulations (Procurement Document)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET procurement_documents/:token/regulations', resources_procurement_document_regulations_path %></td>
+        <td>Returns all regulations for a Procurement Document.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'PUT procurement_documents/:token/regulations', resources_procurement_document_regulations_update_path %></td>
+        <td>Updates all regulations for a Procurement Document.</td>
+      </tr>
+    </table>
+
+  </div>
+</div>
