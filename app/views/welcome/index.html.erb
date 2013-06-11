@@ -1,0 +1,66 @@
+<% content_for :page_header do %>
+  <div class="row">
+    <div class="span12">
+      <h1>Documentation</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span12">
+    <p>Getting started with Clause Logic is easy. Jump right into the API Documentation or check out our Getting Started guides.</p>
+  </div>
+</div>
+
+<div class="row">
+  
+  <div class="span6">
+    <h3>Getting Started</h3>
+    <ul>
+      <li><%= link_to 'API Overview', guides_overview_path %></li>
+      <li><%= link_to 'API Environments', guides_api_environments_path %></li>
+      <li><%= link_to 'Create a Procurement Document', guides_create_procurement_document_path %></li>
+      <li><%= link_to 'Specify Indicators', guides_specify_indicators_path %></li>
+      <li><%= link_to 'Specify Regulations', guides_specify_regulations_path %></li>
+      <li><%= link_to 'Launch the CL GUI', guides_launch_gui_path %></li>
+    </ul>
+  </div>
+  
+  <div class="span6">
+    <h3>REST API</h3>
+    <ul>
+      <li><%= link_to 'Resource Objects', resource_objects_path %></li>
+      <li><%= link_to 'Resources (API Endpoints)', resources_path %></li>
+      <li><%= link_to 'Error Codes and Responses', api_errors_path %></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="span6">
+    <h3>Tutorials</h3>
+    <ul>
+      <li>Coming Soon!</li>
+    </ul>
+  </div>
+
+  <div class="span6">
+    <h3>Authentication</h3>
+    <ul>
+      <li><%= link_to 'Request Types', authentication_request_types_path %></li>
+      <li><%= link_to 'Creating a Signature', authentication_signature_path %></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="span6">
+    <h3>Clients</h3>
+    <ul>
+      <li><a href="https://github.com/hgslabs/cls-client-library-php" target="_blank">PHP</a></li>
+    </ul>
+  </div>
+
+</div>

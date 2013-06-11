@@ -1,0 +1,71 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Prescription Revision</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Prescription Revision (Library)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A prescription revision is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Revision id="1">...</Revision>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Prescription Text<br />
+          <br />
+          <pre class="prettyprint"><%= '<Body><![CDATA[...]]></Body>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>EffectiveStartDate</td>
+        <td>Element</td>
+        <td>Date</td>
+        <td>
+          The date this prescription becomes effective<br />
+          <br />
+          <pre class="prettyprint"><%= '<EffectiveStartDate>11/01/2003</EffectiveStartDate>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>EffectiveEndDate</td>
+        <td>Element</td>
+        <td>Date</td>
+        <td>
+          The date this prescription is no longer effective<br />
+          <br />
+          <pre class="prettyprint"><%= '<EffectiveEndDate>11/01/2003</EffectiveEndDate>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Prescription Revision</h3>
+    <pre class="prettyprint linenums"><%= @xml %></pre>
+  </div>
+</div>

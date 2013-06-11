@@ -1,0 +1,2 @@
+class GuidesController < DocumentationController
+end
