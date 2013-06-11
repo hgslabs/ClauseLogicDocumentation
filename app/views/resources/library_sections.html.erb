@@ -3,11 +3,11 @@
   <ul class="breadcrumb">
     <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
     <li><%= link_to 'Resources', resources_path %> <span class="divider">/</span></li>
-    <li class="active">Regulation</li>
+    <li class="active">Sections</li>
   </ul>
   <div class="row">
     <div class="span12">
-      <h1>GET procurement_document/:token/regulations</h1>
+      <h1>GET sections</h1>
     </div>
   </div>
 <% end %>
@@ -15,25 +15,25 @@
 <div class="row">
   <div class="span8">
     <h3>Resource URL</h3>
-    <p>/api/v1/procurement_document/:token/regulations.format</p>
+    <p>/api/v1/sections.format</p>
     <br />
     <h3>Example Request</h3>
     <table class="table">
       <tr>
         <td>GET</td>
-        <td>/api/v1/procurement_document/:token/regulations.xml</td>
+        <td>/api/v1/sections.xml</td>
       </tr>
     </table>
-    <br />
-    <pre class="prettyprint"><%= @response %></pre>
+    <p><pre class="prettyprint"><%= @response %></pre></p>
   </div>
+
   <div class="span4">
     <div class="well">
       <h3>Resource Information</h3>
       <table class="table">
         <tr>
           <td>Request Type</td>
-          <td><%= link_to 'Signed', authentication_request_types_path %></td>
+          <td><%= link_to 'Non Authenticated', authentication_request_types_path %></td>
         </tr>
         <tr>
           <td>Response Formats</td>
@@ -45,7 +45,7 @@
         </tr>
         <tr>
           <td>Response Object</td>
-          <td><%= link_to 'Regulation', resource_objects_procurement_document_regulation_path %></td>
+          <td><%= link_to 'Section', resource_objects_library_section_path %></td>
         </tr>
       </table>
     </div>

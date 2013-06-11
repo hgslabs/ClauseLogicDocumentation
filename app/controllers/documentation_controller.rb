@@ -78,6 +78,10 @@ class DocumentationController < ApplicationController
         xml_response_library_regulations_pagination(builder)
       when 'library_regulation'
         xml_library_regulation(builder)
+      when 'library_sections'
+        xml_library_sections(builder)
+      when 'library_section'
+        xml_library_section(builder)
       when 'pd_clats'
         xml_response_pd_clats(builder)
       when 'pd_clat'
@@ -120,6 +124,8 @@ class DocumentationController < ApplicationController
         xml_response_pd_regulations(builder)
       when 'pd_regulations_update'
         xml_response_pd_regulations(builder)
+      when 'general_timestamp'
+        xml_general_timestamp(builder)
       end
     end
     xml
@@ -278,6 +284,21 @@ class DocumentationController < ApplicationController
       builder.Name "FAR"
       builder.Title "Federal Acquisition Regulation"
       builder.Url "https://www.acquisition.gov/far"
+    end
+    builder
+  end
+
+  def xml_library_section(builder)
+    builder.Section(id: 1) do
+      builder.Name "E"
+      builder.Title "Inspection &amp; Acceptance"
+    end
+    builder
+  end
+
+  def xml_library_sections(builder)
+    builder.Sections do
+      xml_library_section(builder)
     end
     builder
   end
@@ -476,6 +497,11 @@ class DocumentationController < ApplicationController
       builder.TotalPages 5
       builder.TotalResults 100
     end
+    builder
+  end
+
+  def xml_general_timestamp(builder)
+    builder.Timestamp "1370870976"
     builder
   end
 

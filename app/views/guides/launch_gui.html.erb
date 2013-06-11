@@ -2,7 +2,7 @@
   <br />
   <ul class="breadcrumb">
     <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
-    <li class="active">Guides: Launch GUI</li>
+    <li class="active">Getting Started: Launch GUI</li>
   </ul>
   <div class="row">
     <div class="span12">
@@ -12,13 +12,9 @@
 <% end %>
 
 <p>After a procurement document has been created and the indicators and regulations have been specified, the Clause Logic GUI needs to be launched to provide any additional procurement document information and to determine appropriate clauses/provisions.</p>
-
+<br />
 <h3>How to launch the GUI</h3>
-<p>
-  Use the following resource to obtain the unique Launch URL for the procurement document: <%= link_to 'GET procurement_documents/:token/launch_gui', resources_procurement_document_procurement_document_launch_gui_path %>.
-</p>
-
+<p>Use the following resource to obtain the unique Launch URL for the procurement document: <%= link_to 'GET procurement_documents/:token/launch_gui', resources_procurement_document_procurement_document_launch_gui_path %>.</p>
+<br />
 <h3>Clause Logic Access Token (CLAT) Required</h3>
-<p>
-  Launching the Clause Logic GUI requires a <%= link_to 'Clause Logic Access Token (CLAT)', resource_objects_procurement_document_clat_path %>.  Use the following resource to obtain a CLAT: <%= link_to 'POST procurement_documents/:token/clats', resources_procurement_document_clat_create_path %>. A CLAT can only launch the GUI one time.  In order to relaunch the GUI, you must expire the current CLAT and create a new one.
-</p>
+<p>Launching the Clause Logic GUI requires a <%= link_to 'Clause Logic Access Token (CLAT)', resource_objects_procurement_document_clat_path %>.  Use the following resource to obtain a CLAT: <%= link_to 'POST procurement_documents/:token/clats', resources_procurement_document_clat_create_path %>. A CLAT can only launch the GUI one time.  In order to relaunch the GUI, you must expire the current CLAT and create a new one.</p>

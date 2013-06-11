@@ -1,9 +1,2 @@
-class ApiController < DocumentationController
-  
-  def overview
-  end
-  
-  def errors
-  end
-  
+class ApiController < DocumentationController  
 end

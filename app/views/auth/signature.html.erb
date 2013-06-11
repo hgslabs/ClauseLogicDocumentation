@@ -51,6 +51,7 @@
   </tr>
 </table>
 
+<br />
 <h3>Constructing the Base String</h3>
 <p>In order to generate a signature, you must first generate a base string by concatenating the parameters listed above.  These must be concatenated in the correct order (see below).</p>
 <div class="well">
@@ -107,6 +108,7 @@
 <%=h 'POST&/api/v1/clauses&57ccd80be80eb79f232ea178a536d675&bfd622c79280cd8b8363a00d3aaf8c2a&1312248743&c357d4cc988ff5d4b446e4e7e8fdaa2d&<?xml version="1.0" encoding="UTF-8"?><Request><Id>1743</Id><Name>John</Name></Request>' %>
 </div>
 
+<br />
 <h3>Signing the Request</h3>
 <p>Once the base string is constructed, sign the request using HMAC-SHA256.  The key used for signing depends on the request type.  Note the trailing &amp; for Signed requests.</p>
 <div class="well">

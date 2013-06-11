@@ -64,5 +64,5 @@ class ResourceObjectsController < DocumentationController
   def pd_regulation
     @xml = resource_object_xml('pd_regulation')
   end
-  
+
 end

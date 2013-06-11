@@ -15,15 +15,13 @@
 <div class="row">
   <div class="span8">
     <h3>Resource URL</h3>
-    <p><%= request.protocol %><%= request.host %>/api/v1/procurement_documents.format</p>
+    <p>/api/v1/procurement_documents.format</p>
     <br />
     <h3>Parameters</h3>
     <table class="table">
       <tr>
-        <td>
-          <strong>Number</strong><br />
-          required
-        </td>
+        <td><strong>Number</strong></td>
+        <td><span class="label label-important">required</span></td>
         <td>Procurement Document Number</td>
       </tr>
     </table>
@@ -31,7 +29,7 @@
     <table class="table">
       <tr>
         <td>POST</td>
-        <td><%= request.protocol %><%= request.host %>/api/v1/procurement_documents.xml</td>
+        <td>/api/v1/procurement_documents.xml</td>
       </tr>
     </table>
     <pre class="prettyprint"><%= @request %></pre>

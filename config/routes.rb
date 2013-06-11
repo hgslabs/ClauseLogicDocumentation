@@ -32,6 +32,8 @@ ClauseLogicDocumentation::Application.routes.draw do
   get 'resources/library_prescription_revisions' => "resources#library_prescription_revisions"
   get 'resources/library_regulations' => "resources#library_regulations"
   get 'resources/library_regulation' => "resources#library_regulation"
+  get 'resources/library_sections' => "resources#library_sections"
+  get 'resources/library_section' => "resources#library_section"
   get 'resources/procurement_document/clats' => "resources#pd_clats"
   get 'resources/procurement_document/clat' => "resources#pd_clat"
   get 'resources/procurement_document/clat_create' => "resources#pd_clat_create"
@@ -53,7 +55,8 @@ ClauseLogicDocumentation::Application.routes.draw do
   get 'resources/procurement_document/procurement_document_launch_gui' => "resources#pd_procurement_document_launch_gui"
   get 'resources/procurement_document/regulations' => "resources#pd_regulations"
   get 'resources/procurement_document/regulations_update' => "resources#pd_regulations_update"
-    
+  get 'resources/general/timestamp' => "resources#general_timestamp"
+
   get 'authentication/request_types' => "auth#request_types"
   get 'authentication/signature' => "auth#signature"
     
@@ -61,9 +64,10 @@ ClauseLogicDocumentation::Application.routes.draw do
   get 'guides/specify_indicators' => "guides#specify_indicators"
   get 'guides/specify_regulations' => "guides#specify_regulations"
   get 'guides/launch_gui' => "guides#launch_gui"
-    
+  get 'guides/api_environments' => 'guides#api_environments'
+  get 'guides/overview' => "guides#overview"
+  
   # Api Documentation
   get 'api/errors' => "api#errors"
-  get 'api/overview' => "api#overview"
   
 end

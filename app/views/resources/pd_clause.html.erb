@@ -15,22 +15,18 @@
 <div class="row">
   <div class="span8">
     <h3>Resource URL</h3>
-    <p><%= request.protocol %><%= request.host %>/api/v1/procurement_documents/:token/clauses/:id.format</p>
+    <p>/api/v1/procurement_documents/:token/clauses/:id.format</p>
     <br />
     <h3>Parameters</h3>
     <table class="table">
       <tr>
-        <td>
-          <strong>token</strong><br />
-          required
-        </td>
+        <td><strong>token</strong></td>
+        <td><span class="label label-important">required</span></td>
         <td>The procurement document token.</td>
       </tr>
       <tr>
-        <td>
-          <strong>id</strong><br />
-          required
-        </td>
+        <td><strong>id</strong></td>
+        <td><span class="label label-important">required</span></td>
         <td>The unique id of the desired Clause.</td>
       </tr>
     </table>
@@ -38,7 +34,7 @@
     <table class="table">
       <tr>
         <td>GET</td>
-        <td><%= request.protocol %><%= request.host %>/api/v1/procurement_documents/c9de297b5ba56cbe22537138e9302a5d/clauses/1.xml</td>
+        <td>/api/v1/procurement_documents/c9de297b5ba56cbe22537138e9302a5d/clauses/1.xml</td>
       </tr>
     </table>
     <br />

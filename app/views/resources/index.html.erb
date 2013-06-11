@@ -12,7 +12,7 @@
 <% end %>
 
 <div class="row">
-  <div class="span6">
+  <div class="span4">
     <h3>Library Resources</h3>
     <br />
     <ul>
@@ -20,9 +20,10 @@
       <li><%= link_to 'Indicators', anchor: 'Indicators' %></li>
       <li><%= link_to 'Prescriptions', anchor: 'Prescriptions' %></li>
       <li><%= link_to 'Regulations', anchor: 'Regulations' %></li>
+      <li><%= link_to 'Sections', anchor: 'Sections' %></li>
     </ul>
   </div>
-  <div class="span6">
+  <div class="span4">
     <h3>Procurement Document Resources</h3>
     <br />
     <ul>
@@ -31,6 +32,13 @@
       <li><%= link_to 'Indicators', anchor: 'PDIndicators' %></li>
       <li><%= link_to 'Procurement Documents', anchor: 'ProcurementDocuments' %></li>
       <li><%= link_to 'Regulations', anchor: 'PDRegulations' %></li>
+    </ul>
+  </div>
+  <div class="span4">
+    <h3>General Resources</h3>
+    <br />
+    <ul>
+      <li><%= link_to 'Timestamp', anchor: 'Timestamp' %></li>
     </ul>
   </div>
 </div>
@@ -113,6 +121,23 @@
         <td>Returns a single regulation.</td>
       </tr>
     </table>
+
+    <h3><a name="Sections">Sections (Library)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET sections', resources_library_sections_path %></td>
+        <td>Returns all sections.</td>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET sections/:id', resources_library_section_path %></td>
+        <td>Returns a single section.</td>
+      </tr>
+    </table>
     
     <h3><a name="CLATs">CLATs (Procurement Document)</a></h3>
     <br />
@@ -193,7 +218,7 @@
       </tr>
     </table>
     
-    <h3><a name="ProcurementDocuments">Procurement Document</a></h3>
+    <h3><a name="ProcurementDocuments">Procurement Document (Procurement Document)</a></h3>
     <br />
     <table class="table">
       <tr>
@@ -238,6 +263,20 @@
         <td>Updates all regulations for a Procurement Document.</td>
       </tr>
     </table>
+
+    <h3><a name="Timestamp">Timestamp (General)</a></h3>
+    <br />
+    <table class="table">
+      <tr>
+        <th width="350">Resource</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><%= link_to 'GET timestamp', resources_general_timestamp_path %></td>
+        <td>Returns the CLS server timestamp.</td>
+      </tr>
+    </table>
+
 
   </div>
 </div>

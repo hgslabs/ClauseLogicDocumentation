@@ -46,6 +46,14 @@ class ResourcesController < DocumentationController
   def library_regulation
     @response = resource_xml('library_regulation')
   end
+
+  def library_sections
+    @response = resource_xml('library_sections')
+  end
+
+  def library_section
+    @response = resource_xml('library_section')
+  end
   
   def pd_clats
     @response = resource_xml('pd_clats')
@@ -137,6 +145,10 @@ class ResourcesController < DocumentationController
   def pd_regulations_update
     @request = resource_request_xml('pd_regulations_update')
     @response = resource_xml('pd_regulations_update')
+  end
+
+  def general_timestamp
+    @response = resource_xml('general_timestamp')
   end
   
 end

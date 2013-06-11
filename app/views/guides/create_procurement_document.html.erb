@@ -2,7 +2,7 @@
   <br />
   <ul class="breadcrumb">
     <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
-    <li class="active">Guides: Create a Procurement Document</li>
+    <li class="active">Getting Started: Create a Procurement Document</li>
   </ul>
   <div class="row">
     <div class="span12">
@@ -12,20 +12,17 @@
 <% end %>
 
 <h3>Required Information</h3>
-<p>
-  There is only 1 piece of information needed in order to create a Procurement Document:
-</p>
+<p>The Number is the only attribute that is needed in order to create a Procurement Document:</p>
 
 <table class="table">
   <tr>
     <td>Number</td>
-    <td>The Procurement Document Number (i.e. Contract Number)</td>
+    <td>
+      <p>The Procurement Document Number (i.e. Contract Number)</p>
+      <p>The procurement document is created using the following resource: <%= link_to 'POST procurement_documents', resources_procurement_document_procurement_document_create_path %></p>
+    </td>
   </tr>
 </table>
-<br />
-<p>
-  The procurement document is created using the following resource: <%= link_to 'POST procurement_documents', resources_procurement_document_procurement_document_create_path %>
-</p>
 <br />
 <h3>Additional Information</h3>
 <p>
@@ -34,15 +31,16 @@
 <table class="table">
   <tr>
     <td>Regulations</td>
-    <td>Specify which regulations (FAR, DFARS, etc.) apply to the procurement document.</td>
+    <td>
+      <p>Specify which regulations (FAR, DFARS, etc.) apply to the procurement document.</p>
+      <p>Regulations can be specified using the following resource: <%= link_to 'PUT procurement_documents/:token/regulations', resources_procurement_document_regulations_update_path %></p>
+    </td>
   </tr>
   <tr>
     <td>Indicators</td>
-    <td>Specify details about the procurement document: Total Value, Type of Contract, Procedures Used, etc.</td>
+    <td>
+      <p>Specify details about the procurement document: Total Value, Type of Contract, Procedures Used, etc.</p>
+      <p>Indicators can be specified using the following resource: <%= link_to 'PUT procurement_documents/:token/indicators', resources_procurement_document_indicators_update_path %></p>
+    </td>
   </tr>
 </table>
-
-<p>
-  Regulations can be specified using the following resource: <%= link_to 'PUT procurement_documents/:token/regulations', resources_procurement_document_regulations_update_path %><br />
-  Indicators can be specified using the following resource: <%= link_to 'PUT procurement_documents/:token/indicators', resources_procurement_document_indicators_update_path %>
-</p>

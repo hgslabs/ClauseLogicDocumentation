@@ -3,11 +3,11 @@
   <ul class="breadcrumb">
     <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
     <li><%= link_to 'Resources', resources_path %> <span class="divider">/</span></li>
-    <li class="active">CLAT</li>
+    <li class="active">Section</li>
   </ul>
   <div class="row">
     <div class="span12">
-      <h1>PUT procurement_documents/:token/clats/:id/extend</h1>
+      <h1>GET sections/:id</h1>
     </div>
   </div>
 <% end %>
@@ -15,26 +15,21 @@
 <div class="row">
   <div class="span8">
     <h3>Resource URL</h3>
-    <p>/api/v1/procurement_documents/:token/clats/:id/extend.format</p>
+    <p>/api/v1/sections/:id.format</p>
     <br />
     <h3>Parameters</h3>
     <table class="table">
       <tr>
-        <td><strong>token</strong></td>
-        <td><span class="label label-important">required</span></td>
-        <td>The procurement document token.</td>
-      </tr>
-      <tr>
         <td><strong>id</strong></td>
         <td><span class="label label-important">required</span></td>
-        <td>The unique id of the desired CLAT.</td>
+        <td>The unique id of the desired section.</td>
       </tr>
     </table>
     <h3>Example Request</h3>
     <table class="table">
       <tr>
-        <td>PUT</td>
-        <td>/api/v1/procurement_documents/c9de297b5ba56cbe22537138e9302a5d/clats/1/extend.xml</td>
+        <td>GET</td>
+        <td>/api/v1/sections/1.xml</td>
       </tr>
     </table>
     <br />
@@ -46,7 +41,7 @@
       <table class="table">
         <tr>
           <td>Request Type</td>
-          <td><%= link_to 'Signed', authentication_request_types_path %></td>
+          <td><%= link_to 'Non Authenticated', authentication_request_types_path %></td>
         </tr>
         <tr>
           <td>Response Formats</td>
@@ -54,11 +49,11 @@
         </tr>
         <tr>
           <td>HTTP Method</td>
-          <td>PUT</td>
+          <td>GET</td>
         </tr>
         <tr>
           <td>Response Object</td>
-          <td><%= link_to 'CLAT', resource_objects_procurement_document_clat_path %></td>
+          <td><%= link_to 'Section', resource_objects_library_section_path %></td>
         </tr>
       </table>
     </div>
