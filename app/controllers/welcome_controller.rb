@@ -1,0 +1,2 @@
+class WelcomeController < DocumentationController
+end

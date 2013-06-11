@@ -1,0 +1,51 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Indicator Value</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Indicator Value (Library)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>An indicator value is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Value id="1">...</Value>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Value</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Indicator Value<br />
+          <br />
+          <pre class="prettyprint"><%= '<Value id="1">Department of Defense</Value>' %></pre>  
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Indicator Value</h3>
+    <pre class="prettyprint linenums"><%= @xml %></pre>
+  </div>
+</div>

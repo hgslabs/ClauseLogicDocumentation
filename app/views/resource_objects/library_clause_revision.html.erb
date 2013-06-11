@@ -1,0 +1,101 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Clause Revision</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Clause Revision (Library)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A clause revision is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Revision id="1">...</Revision>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>hasFillins</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates whether or not the revision contains government fill-ins.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Revision hasFillins="true">...</Revision>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>isEditable</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates whether or not this clause is editable. Refers to when a prescription says you may use a clause substantially the same as.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Revision isEditable="false">...</Revision>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Title</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Title of Revision<br />
+          <br />
+          <pre class="prettyprint"><%= "<Title>DEFINITIONS</Title>" %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Clause Text<br />
+          <br />
+          <pre class="prettyprint"><%= '<Body><![CDATA[...]]></Body>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>EffectiveStartDate</td>
+        <td>Element</td>
+        <td>Date</td>
+        <td>
+          The date this clause becomes effective<br />
+          <br />
+          <pre class="prettyprint"><%= '<EffectiveStartDate>11/01/2003</EffectiveStartDate>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>EffectiveEndDate</td>
+        <td>Element</td>
+        <td>Date</td>
+        <td>
+          The date this clause is no longer effective<br />
+          <br />
+          <pre class="prettyprint"><%= '<EffectiveEndDate>11/01/2003</EffectiveEndDate>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Clause Revision</h3>
+    <pre class="prettyprint linenums"><%= @xml %></pre>
+  </div>
+</div>

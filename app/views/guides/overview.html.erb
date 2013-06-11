@@ -1,0 +1,25 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li class="active">Getting Started: API Overview</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>REST API Overview</h1>
+    </div>
+  </div>
+<% end %>
+
+<h3>About the API</h3>
+<p>
+  Below is a list of information about the Clause Logic REST API.<br />
+  <ul>
+    <li>All requests to the API must use the <strong>HTTPS</strong> protocol.</li>
+    <li>Only registered applications will be allowed to access the API.</li>
+    <li>There are three types of authenticated requests.  See the Authentication documentation for more information.</li>
+    <li>All requests/responses use the <strong>XML</strong> format.</li>
+    <li>The following HTTP Methods are used in requests: GET, POST, PUT, DELETE.</li>
+  </ul>
+      
+</p>

@@ -1,116 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Clause Logic API Documentation</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <script>
-  $(document).ready(function() {
-    $('#exampleTabs a').click(function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    })
-  });
-</script>
+  <title>Clause Logic - Documentation</title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+  <%= yield :head %>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container-fluid">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#">Clause Logic API Documentation</a>
+  <%= render 'shared/noscript' %>
+  <div id="siteContainer">
+    <%= render 'shared/header' %>
+  
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>">
+              <a class="close" data-dismiss="alert">×</a>
+              <%= value %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div id="pageHeader" class="span12">
+          <%= yield :page_header %>
+        </div>
+      </div>
+      <div class="row">
+        <div id="content" class="span12">
+          <%= yield %>
+        </div>
       </div>
     </div>
+  
+    <%= render 'shared/footer' %>
   </div>
-
-  <div class="container-fluid">
-    <div class="row-fluid row">
-      <div class="span3">
-        <div class="well sidebar-nav-fixed">
-          <ul class="nav nav-list">
-
-            <li><strong><%= link_to "Getting Started", getting_started_path %></strong>
-              <ul>
-                <li><%= link_to "Create a Procurement Document", getting_started_create_procurement_document_path %></li>
-                <li><%= link_to "Specify Indicators", getting_started_specify_indicators_path %></li>
-                <li><%= link_to "Specify Regulations", getting_started_specify_regulations_path %></li>
-                <li><%= link_to "Launch the CL GUI", getting_started_launch_cl_gui_path %></li>
-              </ul>
-            </li>
-            
-            <li><strong><%= link_to "Authentication", authentication_path %></strong>
-              <ul>
-                <li><%= link_to "Request Types", authentication_request_types_path %></li>
-                <li><%= link_to "Creating a Signature", authentication_creating_a_signature_path %></li>
-              </ul>
-            </li>
-            
-            <li><strong><%= link_to "REST API", rest_path %></strong>
-              <ul>
-                <li><%= link_to "Overview", rest_overview_path %></li>
-                <li><%= link_to "Resource Objects", rest_resource_objects_path %>
-                  <ul>
-                    <li><%= link_to "CLAT", rest_resource_objects_clat_path %></li>
-                    <li><%= link_to "Clause", rest_resource_objects_clause_path %></li>
-                    <li><%= link_to "Clause Revision", rest_resource_objects_clause_revision_path %></li>
-                    <li><%= link_to "ClauseVariation", rest_resource_objects_clause_variation_path %></li>
-                    <li><%= link_to "Indicator", rest_resource_objects_indicator_path %></li>
-                    <li><%= link_to "Indicator Value", rest_resource_objects_indicator_value_path %></li>
-                    <li><%= link_to "Prescription", rest_resource_objects_prescription_path %></li>
-                    <li><%= link_to "Prescription Revision", rest_resource_objects_prescription_revision_path %></li>
-                    <li><%= link_to "ProcurementDocument", rest_resource_objects_procurement_document_path %></li>
-                    <li><%= link_to "Regulation", rest_resource_objects_regulation_path %></li>
-                    <li><%= link_to "Section", rest_resource_objects_section_path %></li>
-                    <li><%= link_to "Timestamp", rest_resource_objects_timestamp_path %></li>
-                  </ul>
-                </li>
-                <li><%= link_to "Endpoints", rest_endpoints_path %>
-                  <ul>
-                    <li><%= link_to "CLATs", rest_endpoints_clats_path %></a></li>
-                    <li><%= link_to "Clauses", rest_endpoints_clauses_path %></a></li>
-                    <li><%= link_to "Indicators", rest_endpoints_indicators_path %></a></li>
-                    <li><%= link_to "Prescriptions", rest_endpoints_prescriptions_path %></a></li>
-                    <li><%= link_to "Procurement Documents", rest_endpoints_procurement_documents_path %></a></li>
-                    <li><%= link_to "Regulations", rest_endpoints_regulations_path %></a></li>
-                    <li><%= link_to "Sections", rest_endpoints_sections_path %></a></li>
-                    <li><%= link_to "Timestamp", rest_endpoints_timestamp_path %></a></li>
-                  </ul>
-                </li>
-                <li><a href="">Error Codes and Responses</a></li>
-              </ul>
-            </li>
-
-            <li><a href=""><strong>Tutorials</strong></a>
-              <ul>
-                <li><a href="">Creating a Procurement Document</a></li>
-                <li><a href="">Adding Regulations</a></li>
-                <li><a href="">Adding Indicators</a></li>
-              </ul>
-            </li>
-            
-            <li><a href=""><strong>Clients</strong></a>
-              <ul>
-                <li><a href="">Java</a></li>
-                <li><a href="">PHP</a></li>
-              </ul>
-            </li>
-
-          </ul>
-        </div><!--/.well -->
-      </div><!--/span-->
-
-      <div class="span9 span-fixed-sidebar">
-       <%= yield %>
-      </div><!--/span-->
-    </div><!--/row-->
-
-  </div><!--/.fluid-container-->
+  <%= render 'shared/ga' %>
 </body>
 </html>

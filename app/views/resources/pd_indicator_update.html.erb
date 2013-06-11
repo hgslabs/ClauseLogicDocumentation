@@ -1,0 +1,72 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resources', resources_path %> <span class="divider">/</span></li>
+    <li class="active">Indicator</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>PUT procurement_documents/:token/indicators/:id</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span8">
+    <h3>Resource URL</h3>
+    <p>/api/v1/procurement_documents/:token/indicators/:id.format</p>
+    <br />
+    <h3>Parameters</h3>
+    <table class="table">
+      <tr>
+        <td><strong>token</strong></td>
+        <td><span class="label label-important">required</span></td>
+        <td>The procurement document token.</td>
+      </tr>
+      <tr>
+        <td><strong>id</strong></td>
+        <td><span class="label label-important">required</span></td>
+        <td>The unique id of the desired Procurement Document Indicator.</td>
+      </tr>
+      <tr>
+        <td><strong>Indicator</strong></td>
+        <td><span class="label label-important">required</span></td>
+        <td>An indicator with requested changes.</td>
+      </tr>
+    </table>
+    <h3>Example Request</h3>
+    <table class="table">
+      <tr>
+        <td>PUT</td>
+        <td>/api/v1/procurement_documents/c9de297b5ba56cbe22537138e9302a5d/indicators/1.xml</td>
+      </tr>
+    </table>
+    <pre class="prettyprint"><%= @request %></pre>
+    <br />
+    <pre class="prettyprint"><%= @response %></pre>
+  </div>
+  <div class="span4">
+    <div class="well">
+      <h3>Resource Information</h3>
+      <table class="table">
+        <tr>
+          <td>Request Type</td>
+          <td><%= link_to 'Protected', authentication_request_types_path %></td>
+        </tr>
+        <tr>
+          <td>Response Formats</td>
+          <td>xml</td>
+        </tr>
+        <tr>
+          <td>HTTP Method</td>
+          <td>PUT</td>
+        </tr>
+        <tr>
+          <td>Response Object</td>
+          <td><%= link_to 'Indicator', resource_objects_procurement_document_indicator_path %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
