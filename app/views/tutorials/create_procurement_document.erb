@@ -45,10 +45,12 @@
           </li>
         </ul>
       </li>
+      <li><strong>Content-Type</strong> Don't forget to set your Content-Type in the header too.</li>
       <li><strong>Make your POST to Clause Logic Service</strong>
         <pre class="prettyprint">
-curl -XPOST -H "X-CL-API_KEY: &lt;API-KEY&gt;" -H "X-CL-NONCE: &lt;NONCE&gt;" -H "X-CL-TIMESTAMP: &lt;TIMESTAMP&gt;" \
-  -H "X-CL-SIGNATURE: &lt;SIGNATURE&gt;" https://clause-logic-server.com/api/v1/procurement_documents</pre>
+curl -XPOST -H "Content-Type: application/xml" -H "X-CL-API_KEY: &lt;API-KEY&gt;" -H "X-CL-NONCE: &lt;NONCE&gt;" \
+  -H "X-CL-TIMESTAMP: &lt;TIMESTAMP&gt;" -H "X-CL-SIGNATURE: &lt;SIGNATURE&gt;" \
+  "https://clause-logic-server.com/api/v1/procurement_documents"</pre>
       </li>
     </ol>
 
