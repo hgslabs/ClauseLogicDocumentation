@@ -1,0 +1,70 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li class="active">Tutorials: How to Create a Procurement Document</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>How do I create a document?</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span12">
+    <p>The first thing you must do is create a procurement document. Your procurement documents are 
+      associated with your API Key and individual documents are accessed by a procurement document token.  
+      You can get all your documents at any time, however you won't be able to access any document not 
+      created with your key.</p>
+
+    <p>So how do I create a procurement document? The only thing you need to create a new procurement 
+      document is a procurement document number. This number is arbitrary. It can be anything you want it 
+      to be. You can update this number later with a simple PUT request to the procurement document. Here 
+      is all the data your going to need.</p>
+
+    <ol>
+      <li><strong>Request Payload</strong><br />
+        <pre class="prettyprint">
+ &lt;Request&gt;
+   &lt;Number&gt;FY2012-ABC123-0001 &lt;/Number&gt;
+ &lt;/Request&gt;</pre>
+      </li>
+      <li><strong>A Signed Request</strong>. You must send this data in your header.
+        <ul>
+          <li>X-CL-API_KEY - Your Application's API Key</li>
+          <li>X-CL-NONCE - A single use unique string used to mitigate Replay attacks.</li>
+          <li>X-CL-TIMESTAMP - The current unix timestamp. Also used to mitigate Replay attacks.</li>
+          <li>X-CL-SIGNATURE  - https://docs.clause-logic.com/authentication/signature
+            <ul>
+              <li><span class="label label-info">Info</span> When you are sending the X-CL-TIMESTAMP you 
+                will want to use the CLS Timestamp endpoint.  The reason being is that your server timestamp 
+                may be different than the CLS Servers Timestamp. If the Timestamps are outside the variable 
+                difference then your signed request will be invalid.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Make your POST to Clause Logic Service</strong>
+        <pre class="prettyprint">
+curl -XPOST -H "X-CL-API_KEY: &lt;API-KEY&gt;" -H "X-CL-NONCE: &lt;NONCE&gt;" -H "X-CL-TIMESTAMP: &lt;TIMESTAMP&gt;" \
+  -H "X-CL-SIGNATURE: &lt;SIGNATURE&gt;" https://clause-logic-server.com/api/v1/procurement_documents</pre>
+      </li>
+    </ol>
+
+    <p>After you submit this request you will get back a payload response like</p>
+    <pre class="prettyprint">
+&lt;Response&gt;
+  &lt;ProcurementDocument&gt;
+    &lt;Token&gt;c9de297b5ba56cbe22537138e9302a5d&lt;/Token&gt;
+    &lt;Number&gt;FY2012-ABC123-0001&lt;/Number&gt;
+    &lt;RunRules&gt;false&lt;/RunRules&gt;
+    &lt;RulesRanAt&gt;07/01/2012 08:00:03&lt;/RulesRanAt&gt;
+    &lt;CreatedAt&gt;01/01/2012 08:00:03&lt;/CreatedAt&gt;
+  &lt;/ProcurementDocument&gt;
+&lt;/Response&gt;</pre>
+
+  <p>You will need that Procurement Document token to make requests against this document in the future.</p>
+
+  </div>
+</div>

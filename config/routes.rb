@@ -1,5 +1,7 @@
 ClauseLogicDocumentation::Application.routes.draw do
 
+  get "tutorial/index"
+
   root :to => "welcome#index"
     
   # Resource Objects Documentation
@@ -67,6 +69,9 @@ ClauseLogicDocumentation::Application.routes.draw do
   get 'guides/api_environments' => 'guides#api_environments'
   get 'guides/overview' => "guides#overview"
   
+  # Tutorials
+  get 'tutorials/create_procurement_document' => "tutorials#create_procurement_document"
+
   # Api Documentation
   get 'api/errors' => "api#errors"
   
