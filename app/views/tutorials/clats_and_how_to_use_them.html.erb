@@ -1,0 +1,37 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', root_path %> <span class="divider">/</span></li>
+    <li class="active">Tutorials: How to Create a Procurement Document</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>What is a CLAT and how do I use them?</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span12">
+    <p>CLAT stands for Clause Logic Access Token and are only used when making a protected request.</p>
+    <p>CLAT's have a couple attributes and elements that are worth knowing about. CLAT id, Token, Secret, 
+        and when it expires. Information on these can be found under the <%= link_to 'CLAT resource 
+        object documentation', resource_objects_procurement_document_clat_path %>.</p>
+
+    <p>When you request a procurement document's CLATs you will get all the CLATs both expired and one active 
+        if there is one.  You will need to use that Active CLAT to make your protected requests or create 
+        a new one.</p>
+
+    <h2>When do you use a CLAT?</h2>
+    <p>CLAT's are used anytime you sign a protected request.</p>
+
+    <p>You need to know!</p>
+    <ul>
+      <li>There can only be one active CLAT for a single procurement document at any time.</li>
+      <li>Every time you make a requested call the CLAT's expiration time will get extended if needed.</li>
+      <li>You can extend a CLAT's expiration time by using the <%= link_to 'extend method', resources_procurement_document_clat_extend_path %></a>.</li>
+      <li>If you CLAT expires you will need to create another one to make a protected call.</li>
+      <li>You can expire a CLAT at anytime using the <%= link_to 'expire method', resources_procurement_document_clat_expire_path %></a>.</li>
+      <li>To Launch the CLS GUI you will need to create a new CLAT every time!  You may have to Expire the current CLAT and create a new one.  <strong>A CLAT can only launch the CLS GUI ONCE!</strong></li>
+    </ul>
+</div>

@@ -72,6 +72,7 @@ ClauseLogicDocumentation::Application.routes.draw do
   # Tutorials
   get 'tutorials/create_procurement_document' => "tutorials#create_procurement_document"
   get 'tutorials/applying_regulations' => "tutorials#applying_regulations"
+  get 'tutorials/clats_and_how_to_use_them' => "tutorials#clats_and_how_to_use_them"
 
   # Api Documentation
   get 'api/errors' => "api#errors"
