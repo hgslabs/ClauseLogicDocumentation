@@ -84,6 +84,8 @@ ClauseLogicDocumentation::Application.routes.draw do
   namespace "v2" do    
     root :to => "welcome#index"
 
+    get 'whats_new' => "welcome#whats_new"
+
     # Resource Objects Documentation
     get 'resource_objects' => "resource_objects#index"
     get 'resource_objects/library/clause' => "resource_objects#library_clause"
