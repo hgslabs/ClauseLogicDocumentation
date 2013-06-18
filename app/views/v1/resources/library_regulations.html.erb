@@ -24,7 +24,16 @@
         <td>/api/v1/regulations.xml</td>
       </tr>
     </table>
-    <p><pre class="prettyprint"><%= @response %></pre></p>
+    <p><pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Regulations&gt;
+    &lt;Regulation id=&quot;1&quot;&gt;
+      &lt;Name&gt;FAR&lt;/Name&gt;
+      &lt;Title&gt;Federal Acquisition Regulation&lt;/Title&gt;
+      &lt;Url&gt;https://www.acquisition.gov/far&lt;/Url&gt;
+    &lt;/Regulation&gt;
+  &lt;/Regulations&gt;
+&lt;/Response&gt;</pre></p>
     <h3>Example Request with Pagination</h3>
     <table class="table">
       <tr>
@@ -32,7 +41,21 @@
         <td>/api/v1/regulations.xml?page=1</td>
       </tr>
     </table>
-    <p><pre class="prettyprint"><%= @response_pagination %></pre></p>
+    <p><pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Pagination&gt;
+    &lt;CurrentPage&gt;1&lt;/CurrentPage&gt;
+    &lt;TotalPages&gt;5&lt;/TotalPages&gt;
+    &lt;TotalResults&gt;100&lt;/TotalResults&gt;
+  &lt;/Pagination&gt;
+  &lt;Regulations&gt;
+    &lt;Regulation id=&quot;1&quot;&gt;
+      &lt;Name&gt;FAR&lt;/Name&gt;
+      &lt;Title&gt;Federal Acquisition Regulation&lt;/Title&gt;
+      &lt;Url&gt;https://www.acquisition.gov/far&lt;/Url&gt;
+    &lt;/Regulation&gt;
+  &lt;/Regulations&gt;
+&lt;/Response&gt;</pre></p>
   </div>
   <div class="span4">
     <div class="well">

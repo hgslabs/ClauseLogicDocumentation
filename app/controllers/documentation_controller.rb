@@ -41,6 +41,8 @@ class DocumentationController < ApplicationController
       xml_pd_procurement_document(builder)
     when 'pd_regulation'
       xml_pd_regulation(builder)
+    when 'library_fillins' # Version 2
+      xml_library_fillins(builder)
     end
     xml
   end
@@ -187,6 +189,8 @@ class DocumentationController < ApplicationController
     end
   end
   
+  ##
+  # Version 1
   def xml_library_clause_revision(builder)
     builder.Revision(id: 1, hasFillins: "true", isEditable: "false") do
       builder.Title "Clause Title"
@@ -199,6 +203,20 @@ class DocumentationController < ApplicationController
     builder
   end
   
+  ##
+  # Version 2
+  def v2_xml_library_clause_revision(builder)
+    builder.Revision(id: 1, hasFillins: "true", isEditable: "false") do
+      builder.Title "Clause Title"
+      builder.Body do
+        builder.cdata! "Clause Text"
+      end
+      builder.EffectiveStartDate "01/01/2012"
+      builder.EffectiveEndDate nil
+    end
+    builder
+  end
+
   def xml_library_clause_variation(builder)
     builder.ClauseVariation do
       builder.AlternateOrDeviation "Alternate"

@@ -37,9 +37,19 @@
         <td>/api/v1/procurement_documents/c9de297b5ba56cbe22537138e9302a5d/regulations.xml</td>
       </tr>
     </table>
-    <pre class="prettyprint"><%= @request %></pre>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Regulations&gt;
+    &lt;Regulation id=&quot;1&quot; selected=&quot;false&quot;/&gt;
+  &lt;/Regulations&gt;
+&lt;/Request&gt;</pre>
     <br />
-    <pre class="prettyprint"><%= @response %></pre>
+    <pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Regulations&gt;
+    &lt;Regulation id=&quot;1&quot; selected=&quot;false&quot; locked=&quot;true&quot;&gt;FAR&lt;/Regulation&gt;
+  &lt;/Regulations&gt;
+&lt;/Response&gt;</pre>
   </div>
   <div class="span4">
     <div class="well">

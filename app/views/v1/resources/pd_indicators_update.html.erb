@@ -37,9 +37,30 @@
         <td>/api/v1/procurement_documents/c9de297b5ba56cbe22537138e9302a5d/indicators.xml</td>
       </tr>
     </table>
-    <pre class="prettyprint"><%= @request %></pre>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id=&quot;1&quot;&gt;
+      &lt;Values&gt;
+        &lt;Value id=&quot;1&quot; selected=&quot;true&quot;/&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Request&gt;</pre>
     <br />
-    <pre class="prettyprint"><%= @response %></pre>
+    <pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id=&quot;1&quot;&gt;
+      &lt;Name&gt;Organization&lt;/Name&gt;
+      &lt;DataType&gt;String&lt;/DataType&gt;
+      &lt;Constraint&gt;PICK_ONE&lt;/Constraint&gt;
+      &lt;Values&gt;
+        &lt;Value id=&quot;1&quot; locked=&quot;true&quot; selected=&quot;true&quot;&gt;Department of Defense&lt;/Value&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Response&gt;</pre>
   </div>
   <div class="span4">
     <div class="well">
