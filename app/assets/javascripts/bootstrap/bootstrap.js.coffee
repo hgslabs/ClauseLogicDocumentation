@@ -5,3 +5,6 @@ jQuery ->
   $("button[name=tooltip]").tooltip()
   $("[title]").tooltip()
   prettyPrint()
+  
+  $("#version_select").bind "change", ->
+    window.location.pathname = $(this).val()

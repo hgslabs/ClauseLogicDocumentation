@@ -1,0 +1,84 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v1_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v1_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Indicator</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Indicator (Library)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>An indicator is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Indicator id="1">...</Indicator>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Indicator Name<br />
+          <br />
+          <pre class="prettyprint"><%= '<Name>Organization</Name>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Data Type</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Indicator Data Type (String, Integer, Boolean, etc.)<br />
+          <br />
+          <pre class="prettyprint"><%= '<DataType>String</DataType>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Constraint</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Indicates how many values can be selected:<br />
+          - PICK_MANY: Multiple values may be selected<br />
+          - PICK_ONE: Only one value may be selected<br />
+          - NONE: No pre-defined values exist.  Value will be entered manually.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Constraint>PICK_ONE</Constraint>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Values</td>
+        <td>Element</td>
+        <td><%= link_to 'Indicator Value', v1_resource_objects_library_indicator_value_path %></td>
+        <td>
+          An array of values to select from.  This element will NOT be present if Constraint is NONE.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Values>...</Values>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Indicator</h3>
+    <pre class="prettyprint linenums"><%= @xml %></pre>
+  </div>
+</div>

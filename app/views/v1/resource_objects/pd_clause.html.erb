@@ -1,0 +1,81 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v1_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v1_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Clause</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Clause (Procurement Document)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A Clause is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<ProcurementDocumentClause id="1">...</ProcurementDocumentClause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>fullText</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates if the clause is to be displayed in full text.<br />
+          <br />
+          <pre class="prettyprint"><%= '<ProcurementDocumentClause fullText="false">...</ProcurementDocumentClause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>prescribed</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates if the clause was prescribed.<br />
+          <br />
+          <pre class="prettyprint"><%= '<ProcurementDocumentClause prescribed="true">...</ProcurementDocumentClause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>required</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates if the clause is required.<br />
+          <br />
+          <pre class="prettyprint"><%= '<ProcurementDocumentClause required="false">...</ProcurementDocumentClause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Clause</td>
+        <td>Element</td>
+        <td><%= link_to 'Clause', v1_resource_objects_library_clause_path %></td>
+        <td>
+          The actual Clause object.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Clause>...</Clause>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Clause</h3>
+    <pre class="prettyprint linenums"><%= @xml %></pre>
+  </div>
+</div>

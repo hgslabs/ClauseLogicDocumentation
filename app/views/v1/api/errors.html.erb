@@ -1,0 +1,65 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v1_root_path %> <span class="divider">/</span></li>
+    <li class="active">Error Codes</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Error Codes &amp; Responses</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span12">
+    <h3>HTTP Status Codes</h3>
+    <table class="table">
+      <tr>
+        <th>Code</th>
+        <th>Text</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>200</td>
+        <td width="225">OK</td>
+        <td>The request was successful.</td>
+      </tr>
+      <tr>
+        <td>201</td>
+        <td>CREATED</td>
+        <td>The request was successful and the resource has been created.</td>
+      </tr>
+      <tr>
+        <td>304</td>
+        <td>NOT MODIFIED</td>
+        <td>The resource has not changed since last requested by the client.</td>
+      </tr>
+      <tr>
+        <td>400</td>
+        <td>BAD REQUEST</td>
+        <td>The data supplied in the request is invalid.</td>
+      </tr>
+      <tr>
+        <td>401</td>
+        <td>UNAUTHORIZED</td>
+        <td>Access to this resource is restricted.  No credentials were supplied or the supplied credentials were insufficient to access the resource.</td>
+      </tr>
+      <tr>
+        <td>404</td>
+        <td>NOT FOUND</td>
+        <td>The resource could not be found.</td>
+      </tr>
+      <tr>
+        <td>500</td>
+        <td>SERVER ERROR</td>
+        <td>The request could not be completed due to an internal server error.</td>
+      </tr>
+      <tr>
+        <td>503</td>
+        <td>SERVICE UNAVAILABLE</td>
+        <td>The service is currently unavailable. Try again later.</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v1_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v1_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Regulation</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Regulation (Procurement Document)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A regulation is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Regulation id="1">...</Regulation>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>locked</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates if the regulation was set from a contract writing system (CWS).  If true, the regulation cannot be modified in the GUI.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Regulation locked="true">...</Regulation>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>selected</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates if the regulation is selected or not.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Regulation selected="true">...</Regulation>' %></pre>  
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Regulation</h3>
+    <pre class="prettyprint linenums"><%= @xml %></pre>
+  </div>
+</div>
