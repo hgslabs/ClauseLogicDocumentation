@@ -24,7 +24,22 @@
         <td>/api/v1/prescriptions.xml</td>
       </tr>
     </table>
-    <p><pre class="prettyprint"><%= @response %></pre></p>
+    <p><pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Prescriptions&gt;
+    &lt;Prescription id=&quot;1&quot;&gt;
+      &lt;Number&gt;52.202-1&lt;/Number&gt;
+      &lt;Regulation id=&quot;1&quot;&gt;FAR&lt;/Regulation&gt;
+      &lt;Revision id=&quot;1&quot;&gt;
+        &lt;Body&gt;
+          &lt;![CDATA[Prescription Text]]&gt;
+        &lt;/Body&gt;
+        &lt;EffectiveStartDate&gt;01/01/2012&lt;/EffectiveStartDate&gt;
+        &lt;EffectiveEndDate/&gt;
+      &lt;/Revision&gt;
+    &lt;/Prescription&gt;
+  &lt;/Prescriptions&gt;
+&lt;/Response&gt;</pre></p>
     <h3>Example Request with Pagination</h3>
     <table class="table">
       <tr>
@@ -32,7 +47,27 @@
         <td>/api/v1/prescriptions.xml?page=1</td>
       </tr>
     </table>
-    <p><pre class="prettyprint"><%= @response_pagination %></pre></p>
+    <p><pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Pagination&gt;
+    &lt;CurrentPage&gt;1&lt;/CurrentPage&gt;
+    &lt;TotalPages&gt;5&lt;/TotalPages&gt;
+    &lt;TotalResults&gt;100&lt;/TotalResults&gt;
+  &lt;/Pagination&gt;
+  &lt;Prescriptions&gt;
+    &lt;Prescription id=&quot;1&quot;&gt;
+      &lt;Number&gt;52.202-1&lt;/Number&gt;
+      &lt;Regulation id=&quot;1&quot;&gt;FAR&lt;/Regulation&gt;
+      &lt;Revision id=&quot;1&quot;&gt;
+        &lt;Body&gt;
+          &lt;![CDATA[Prescription Text]]&gt;
+        &lt;/Body&gt;
+        &lt;EffectiveStartDate&gt;01/01/2012&lt;/EffectiveStartDate&gt;
+        &lt;EffectiveEndDate/&gt;
+      &lt;/Revision&gt;
+    &lt;/Prescription&gt;
+  &lt;/Prescriptions&gt;
+&lt;/Response&gt;</pre></p>
   </div>
   <div class="span4">
     <div class="well">

@@ -24,7 +24,21 @@
         <td>/api/v1/indicators.xml</td>
       </tr>
     </table>
-    <p><pre class="prettyprint"><%= @response %></pre></p>
+    <p><pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id=&quot;1&quot;&gt;
+      &lt;Name&gt;Organization&lt;/Name&gt;
+      &lt;DataType&gt;String&lt;/DataType&gt;
+      &lt;Constraint&gt;PICK_ONE&lt;/Constraint&gt;
+      &lt;Values&gt;
+        &lt;Value id=&quot;1&quot;&gt;Department of Defense&lt;/Value&gt;
+        &lt;Value id=&quot;2&quot;&gt;NASA&lt;/Value&gt;
+        &lt;Value id=&quot;3&quot;&gt;Coast Guard&lt;/Value&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Response&gt;</pre></p>
     <h3>Example Request with Pagination</h3>
     <table class="table">
       <tr>
@@ -32,7 +46,26 @@
         <td>/api/v1/indicators.xml?page=1</td>
       </tr>
     </table>
-    <p><pre class="prettyprint"><%= @response_pagination %></pre></p>
+    <p><pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Pagination&gt;
+    &lt;CurrentPage&gt;1&lt;/CurrentPage&gt;
+    &lt;TotalPages&gt;5&lt;/TotalPages&gt;
+    &lt;TotalResults&gt;100&lt;/TotalResults&gt;
+  &lt;/Pagination&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id=&quot;1&quot;&gt;
+      &lt;Name&gt;Organization&lt;/Name&gt;
+      &lt;DataType&gt;String&lt;/DataType&gt;
+      &lt;Constraint&gt;PICK_ONE&lt;/Constraint&gt;
+      &lt;Values&gt;
+        &lt;Value id=&quot;1&quot;&gt;Department of Defense&lt;/Value&gt;
+        &lt;Value id=&quot;2&quot;&gt;NASA&lt;/Value&gt;
+        &lt;Value id=&quot;3&quot;&gt;Coast Guard&lt;/Value&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Response&gt;</pre></p>
   </div>
   <div class="span4">
     <div class="well">

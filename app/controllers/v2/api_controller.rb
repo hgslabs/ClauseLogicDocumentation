@@ -1,2 +1,2 @@
-class V2::ApiController < DocumentationController  
+class V2::ApiController < ApplicationController  
 end

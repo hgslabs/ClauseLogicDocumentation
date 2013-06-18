@@ -1,2 +1,2 @@
-class V2::GuidesController < DocumentationController
+class V2::GuidesController < ApplicationController
 end
