@@ -88,6 +88,7 @@ ClauseLogicDocumentation::Application.routes.draw do
     get 'resource_objects' => "resource_objects#index"
     get 'resource_objects/library/clause' => "resource_objects#library_clause"
     get 'resource_objects/library/clause_revision' => "resource_objects#library_clause_revision"
+    get 'resource_objects/library/fillins' => "resource_objects#library_fillins"
     get 'resource_objects/library/clause_variation' => "resource_objects#library_clause_variation"
     get 'resource_objects/library/indicator' => "resource_objects#library_indicator"
     get 'resource_objects/library/indicator_value' => "resource_objects#library_indicator_value"

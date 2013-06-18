@@ -83,6 +83,16 @@
           <pre class="prettyprint"><%= '<EffectiveEndDate>11/01/2003</EffectiveEndDate>' %></pre> 
         </td>
       </tr>
+      <tr>
+        <td>Fillins</td>
+        <td>Element</td>
+        <td><%= link_to 'Fillins', v2_resource_objects_library_fillins_path %></td>
+        <td>
+          Revision Fill-ins<br />
+          <br />
+          <pre class="prettyprint"><%= '<Fillins>...</Fillins>' %></pre> 
+        </td>
+      </tr>
     </table>
     
     <h3>Example Clause Revision</h3>
@@ -94,6 +104,15 @@
   &lt;/Body&gt;
   &lt;EffectiveStartDate&gt;01/01/2012&lt;/EffectiveStartDate&gt;
   &lt;EffectiveEndDate/&gt;
+  &lt;Fillins&gt;
+    &lt;Fillin id=&quot;1&quot; name=&quot;Employee Count&quot; source=&quot;Government&quot; dataType=&quot;Numeric&quot;&gt;&lt;/Fillin&gt;
+    &lt;Fillin id=&quot;2&quot; name=&quot;Location&quot; source=&quot;Government&quot; dataType=&quot;Choose&quot;&gt;
+      &lt;Options&gt;
+        &lt;Option&gt;On-Site&lt;/Option&gt;
+        &lt;Option&gt;Off-Site&lt;/Option&gt;
+      &lt;/Options&gt;
+    &lt;/Fillin&gt;
+  &lt;/Fillins&gt;
 &lt;/Revision&gt;</pre>
   </div>
 </div>
