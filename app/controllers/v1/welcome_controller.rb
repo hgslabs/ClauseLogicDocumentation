@@ -1,2 +1,2 @@
-class V1::WelcomeController < DocumentationController
+class V1::WelcomeController < ApplicationController
 end
