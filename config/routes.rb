@@ -1,8 +1,5 @@
 ClauseLogicDocumentation::Application.routes.draw do
 
-
-  match "/" => redirect("/v1")
-
   namespace "v1" do    
     root :to => "welcome#index"
 
@@ -161,5 +158,7 @@ ClauseLogicDocumentation::Application.routes.draw do
     # Api Documentation
     get 'api/errors' => "api#errors"
   end
+  
+  root :to => "v1/welcome#index"
   
 end
