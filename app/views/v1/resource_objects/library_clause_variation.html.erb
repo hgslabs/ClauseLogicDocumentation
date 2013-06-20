@@ -1,0 +1,55 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v1_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v1_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Clause Variation</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Clause Variation (Library)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A clause variation is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>AlternateOrDeviation</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Indicates Alternate or Deviation<br />
+          <br />
+          <pre class="prettyprint"><%= '<AlternateOrDeviation>Alternate</AlternateOrDeviation>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>VariationName</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Name of Variation<br />
+          <br />
+          <pre class="prettyprint"><%= "<VariationName>I</VariationName>" %></pre>  
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Clause Variation</h3>
+    <pre class="prettyprint linenums">
+&lt;ClauseVariation&gt;
+  &lt;AlternateOrDeviation&gt;Alternate&lt;/AlternateOrDeviation&gt;
+  &lt;VariationName&gt;1&lt;/VariationName&gt;
+&lt;/ClauseVariation&gt;</pre>
+  </div>
+</div>

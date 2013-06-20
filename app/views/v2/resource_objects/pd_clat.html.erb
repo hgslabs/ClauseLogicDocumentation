@@ -1,0 +1,76 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v2_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">CLAT</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>CLAT (Procurement Document)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A CLAT is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Clat id="1">...</Clat>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Token</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          CLAT Token<br />
+          <br />
+          <pre class="prettyprint"><%= '<Token>7fd5e89f7c85d7ab82b79047bc56c3dd</Token>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Secret</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          CLAT Secret<br />
+          <br />
+          <pre class="prettyprint"><%= '<Secret>27308d432f55864e8050fb0b37d186d6</Secret>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>ExpiresAt</td>
+        <td>Element</td>
+        <td>DateTime</td>
+        <td>
+          When the CLAT will expire.<br />
+          <br />
+          <pre class="prettyprint"><%= '<ExpiresAt>07/01/2012 08:00:03</ExpiresAt>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example CLAT</h3>
+    <pre class="prettyprint linenums">
+&lt;Clat id=&quot;1&quot;&gt;
+  &lt;Token&gt;7fd5e89f7c85d7ab82b79047bc56c3dd&lt;/Token&gt;
+  &lt;Secret&gt;27308d432f55864e8050fb0b37d186d6&lt;/Secret&gt;
+  &lt;ExpiresAt&gt;07/01/2012 08:00:03&lt;/ExpiresAt&gt;
+&lt;/Clat&gt;</pre>
+  </div>
+</div>

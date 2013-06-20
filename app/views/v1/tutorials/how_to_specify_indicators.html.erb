@@ -1,0 +1,103 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v1_root_path %> <span class="divider">/</span></li>
+    <li class="active">Tutorials: How do I specify indicators?</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>How do I specify indicators?</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span12">
+    <p>You now have a procurement document and you might have added in some regulations. Now it's time to add in some indicators.</p>
+    
+    <p>Adding the Indicators and a selected value will allow the Clause Logic Service to run the rules and figure out what Clauses need to be added.</p>
+
+    <p>All indicators are listed under the library indicators endpoint.  Use this endpoint to get all the indicators and its values. After you find an indicator that you want to add to your document you will have to check the indicators constraint.  There are three of these, PICK_ONE, PICK_MANY, or NONE. You can read about these under <%= link_to 'Specifying Indicators', v1_guides_specify_indicators_path %>.  Depending on the constraint your going to formulate your request payload like</p>
+
+    <h3>PICK_ONE</h3>
+    <pre class="prettyprint">
+ &lt;Request&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id="1"&gt;
+      &lt;Values&gt;
+        &lt;Value id="1" selected="true"/&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Request&gt;</pre>
+
+    <h3>PICK_MANY</h3>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id="5"&gt;
+      &lt;Values&gt;
+        &lt;Value id="1" selected="true"/&gt;
+        &lt;Value id="2" selected="true"/&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Request&gt;</pre>
+
+    <h3>NONE</h3>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id="3"&gt;
+      &lt;Values&gt;
+        &lt;Value selected="true"&gt;1500&lt;/Value&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Request&gt;</pre>
+
+    <p>With this payload request you can specify multiple sets of indicators in any three of the constraints. For example</p>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Indicators&gt;
+    &lt;Indicator id="5"&gt;
+      &lt;Values&gt;
+        &lt;Value id="1" selected="true"/&gt;
+        &lt;Value id="2" selected="true"/&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+        &lt;Indicator id="3"&gt;
+      &lt;Values&gt;
+        &lt;Value selected="true"&gt;1500&lt;/Value&gt;
+      &lt;/Values&gt;
+    &lt;/Indicator&gt;
+  &lt;/Indicators&gt;
+&lt;/Request&gt;</pre>
+
+    <p>The selected attribute specifies that this value for the indicator is the one to be selected.</p>
+
+    <p>If you want to just specify a single indicator at a time you will have to format your payload like</p>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Indicator id="3"&gt;
+    &lt;Values&gt;
+      &lt;Value selected="true"&gt;1500&lt;/Value&gt;
+    &lt;/Values&gt;
+  &lt;/Indicator&gt;
+&lt;/Request&gt;</pre>
+
+    <p>As you can see the <code><Indicators></code> has been omitted. With this payload you can only submit one Indicator at a time.</p>
+
+    <p>Once you have selected the prefered payload you will need to make the request to the service.</p>
+
+    <p>If you send multiple indicators at once you will have to use the resource</p>
+
+    <p><code>PUT procurement_documents/:token/indicators</code></p>
+
+    <p>If you are just going to send a single indicator then you will have to use the resource</p>
+
+    <p><code>PUT procurement_documents/:token/indicators/:id</code></p>
+
+    <p>Finally you make the PUT request to the Clause Logic Service with a Protected signature.</p>
+  </div>
+</div>

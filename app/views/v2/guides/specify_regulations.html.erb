@@ -1,0 +1,22 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li class="active">Getting Started: Specify Regulations</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Specifying Regulations</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>The Clause Logic Service supports a wide variety of regulations (FAR, DFARS, etc.).  In order to determine appropriate clauses/provisions for the procurement document, it is important to specify which regulations apply.</p>
+<br />
+<h3>How to Specify Regulations</h3>
+<p>There are two ways to specify regulations: API or Clause Logic GUI.  From the API, Regulations can be specified using the following resource: <%= link_to 'PUT procurement_documents/:token/regulations', resources_procurement_document_regulations_update_path %>.  Regulations specified through the API cannot be modified from the Clause Logic GUI. If no regulations are specified, Clause Logic will default to using FAR.</p>
+<br/>
+<h3>Clause Logic Access Token (CLAT) Required</h3>
+<p>
+  Any modification to a procurement document requires a <%= link_to 'Clause Logic Access Token (CLAT)', resource_objects_procurement_document_clat_path %>.  Use the following resource to obtain a CLAT: <%= link_to 'POST procurement_documents/:token/clats', resources_procurement_document_clat_create_path %>.
+</p>

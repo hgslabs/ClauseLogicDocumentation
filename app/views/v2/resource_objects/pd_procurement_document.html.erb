@@ -1,0 +1,88 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v2_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Procurement Document</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Procurement Document</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A Procurement Document is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Token</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Procurement Document Token<br />
+          <br />
+          <pre class="prettyprint"><%= '<Token>c9de297b5ba56cbe22537138e9302a5d</Token>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Procurement Document Number<br />
+          <br />
+          <pre class="prettyprint"><%= '<Number>FY2012-ABC123-0001</Number>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>RunRules</td>
+        <td>Element</td>
+        <td>Boolean</td>
+        <td>
+          Indicates when the rules need to be run to bring the procurement document up to date.<br />
+          <br />
+          <pre class="prettyprint"><%= '<RunRules>true</RunRules>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>RulesRanAt</td>
+        <td>Element</td>
+        <td>DateTime</td>
+        <td>
+          The last time the rules were run.<br />
+          <br />
+          <pre class="prettyprint"><%= '<RulesRanAt>07/01/2012 08:00:03</RulesRanAt>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>CreatedAt</td>
+        <td>Element</td>
+        <td>DateTime</td>
+        <td>
+          When the procurement document was created.<br />
+          <br />
+          <pre class="prettyprint"><%= '<CreatedAt>07/01/2012 08:00:03</CreatedAt>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Procurement Document</h3>
+    <pre class="prettyprint linenums">
+&lt;ProcurementDocument&gt;
+  &lt;Token&gt;c9de297b5ba56cbe22537138e9302a5d&lt;/Token&gt;
+  &lt;Number&gt;FY2012-ABC123-0001&lt;/Number&gt;
+  &lt;RunRules&gt;false&lt;/RunRules&gt;
+  &lt;RulesRanAt&gt;07/01/2012 08:00:03&lt;/RulesRanAt&gt;
+  &lt;CreatedAt&gt;01/01/2012 08:00:03&lt;/CreatedAt&gt;
+&lt;/ProcurementDocument&gt;</pre>
+  </div>
+</div>

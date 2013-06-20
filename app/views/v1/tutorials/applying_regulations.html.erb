@@ -1,0 +1,58 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v1_root_path %> <span class="divider">/</span></li>
+    <li class="active">Tutorials: How do I specify which regulations apply?</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>How do I specify which regulations apply?</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span12">
+    <p>After you have created a procurement document you can make a call to see what regulations are applied to the document.  You can do this by</p>
+    <code>GET /api/v1/procurement_document/:token/regulations</code>
+    <p><code>:token</code> is your procurement document token. (See How to Create a Procurement Document?)</p>
+
+    <p>This will return all your regulations that have been applied.  You will notice that FAR is already assigned. Why? In CLS the FAR (Federal Acquisition Regulation) will always be assigned. You can not remove this regulation. You will also see three attributes on the Regulation id, selected, and locked. These are important. So what do they mean?</p>
+    <p>
+        <strong>id</strong> - Is the regulation Id<br />
+        <strong>selected</strong> - if the regulation is applied to the procurement document<br />
+        <strong>locked</strong> - if the regulation is locked or not. if it is then you will not be able to modify this regulations. For example the FAR regulation will always be selected and locked.
+    </p>
+    
+    <h2>So how do you apply more regulations? </h2>
+    <p>First you will need to get a list of the regulations in our system. You can do this throughout library regulations endpoint by calling</p>
+    <code>GET /api/v1/regulations</code>
+    <p>This will return a list of regulations. With this data you can format a request payload and make a call to add your regulations.</p>
+
+    <p>Next you will need to create your request payload.</p>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Regulations&gt;
+    &lt;Regulation id="2" selected="true"/&gt;
+  &lt;/Regulations&gt;
+&lt;/Request&gt;</pre>
+
+    <p>If you want to add the regulation the you need to set selected to true.  If you want to remove the regulation from the document then just set the selected attribute to false.</p>
+    <p><span class="label label-info">Info</span> You will need to resend the existing applied regulations with the new ones.</p>
+    <p>For Example if you had FAR, DFARS already attached the the document and you want to add AFARS, then you will need to make a request play load that includes all three of these regulations.</p>
+    <pre class="prettyprint">
+&lt;Request&gt;
+  &lt;Regulations&gt;
+    &lt;Regulation id="1" selected="true"/&gt;
+    &lt;Regulation id="2" selected="true"/&gt;
+    &lt;Regulation id="3" selected="true"/&gt;
+  &lt;/Regulations&gt;
+&lt;/Request&gt;</pre>
+
+    <p>Finally, you can just make your request</p>
+    <code>PUT /api/v1/procurement_documents/:token/regulations</code>
+    <p><code>:token</code> is your procurement document token</p>
+
+    <p>This is a protected request so you will need to send a CLAT token in addition to the signature.</p>
+    <p>Now if you get your regulations you should see more or less.  It's important to look at the selected attribute since a deleted  regulation will still show up but the selected attribute will be false.</p>
+</div>
