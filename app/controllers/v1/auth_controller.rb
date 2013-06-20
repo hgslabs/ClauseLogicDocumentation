@@ -1,4 +1,4 @@
-class v1::AuthController < ApplicationController
+class V1::AuthController < ApplicationController
 
   def signature
     @request_body = ""
