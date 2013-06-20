@@ -1,0 +1,83 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resources', v2_resources_path %> <span class="divider">/</span></li>
+    <li class="active">Clause</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>GET procurement_documents/:token/clauses</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="span8">
+    <h3>Resource URL</h3>
+    <p>/api/v1/procurement_documents/:token/clauses.format</p>
+    <br />
+    <h3>Example Request</h3>
+    <table class="table">
+      <tr>
+        <td>GET</td>
+        <td>/api/v1/procurement_documents/:token/clauses.xml</td>
+      </tr>
+    </table>
+    <br />
+    <pre class="prettyprint">
+&lt;Response&gt;
+  &lt;Clauses&gt;
+    &lt;Clause id=&quot;1&quot; prescribed=&quot;true&quot; required=&quot;false&quot; referenceAllowed=&quot;true&quot; provision=&quot;false&quot;&gt;
+      &lt;Number&gt;52.202-1&lt;/Number&gt;
+      &lt;Regulation id=&quot;1&quot;&gt;FAR&lt;/Regulation&gt;
+      &lt;Section id=&quot;1&quot;&gt;I&lt;/Section&gt;
+      &lt;ClauseVariation&gt;
+        &lt;AlternateOrDeviation&gt;Alternate&lt;/AlternateOrDeviation&gt;
+        &lt;VariationName&gt;1&lt;/VariationName&gt;
+      &lt;/ClauseVariation&gt;
+      &lt;Revision id=&quot;1&quot; isEditable=&quot;false&quot;&gt;
+        &lt;Title&gt;Clause Title&lt;/Title&gt;
+        &lt;Body&gt;
+          &lt;![CDATA[Clause Text]]&gt;
+        &lt;/Body&gt;
+        &lt;EffectiveStartDate&gt;01/01/2012&lt;/EffectiveStartDate&gt;
+        &lt;EffectiveEndDate/&gt;
+        &lt;Fillins&gt;
+          &lt;Fillin id=&quot;1&quot; name=&quot;Employee Count&quot; source=&quot;Government&quot; dataType=&quot;Numeric&quot;&gt;&lt;/Fillin&gt;
+          &lt;Fillin id=&quot;2&quot; name=&quot;Location&quot; source=&quot;Government&quot; dataType=&quot;Choose&quot;&gt;
+            &lt;Options&gt;
+              &lt;Option&gt;On-Site&lt;/Option&gt;
+              &lt;Option&gt;Off-Site&lt;/Option&gt;
+            &lt;/Options&gt;
+          &lt;/Fillin&gt;
+        &lt;/Fillins&gt;
+      &lt;/Revision&gt;
+    &lt;/Clause&gt;
+  &lt;/Clauses&gt;
+&lt;/Response&gt;</pre>
+  </div>
+  <div class="span4">
+    <div class="well">
+      <h3>Resource Information</h3>
+      <table class="table">
+        <tr>
+          <td>Request Type</td>
+          <td><%= link_to 'Signed', v2_authentication_request_types_path %></td>
+        </tr>
+        <tr>
+          <td>Response Formats</td>
+          <td>xml</td>
+        </tr>
+        <tr>
+          <td>HTTP Method</td>
+          <td>GET</td>
+        </tr>
+        <tr>
+          <td>Response Object</td>
+          <td><%= link_to 'Clauses', v2_resource_objects_procurement_document_clause_path %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

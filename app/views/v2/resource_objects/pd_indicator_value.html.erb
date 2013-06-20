@@ -1,0 +1,74 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v2_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Indicator Value</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Indicator Value (Procurement Document)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>An indicator value is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID.  This attribute is NOT present when the Indicator's Constraint is NONE.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Value id="1">...</Value>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>locked</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates if the value was set from a contract writing system (CWS).  If true, the value cannot be modified in the GUI.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Value locked="true">...</Value>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>selected</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates if the value is selected or not.  This attribute is NOT present when the Indicator's Constraint is NONE.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Value selected="true">...</Value>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Value</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Indicator Value<br />
+          <br />
+          <pre class="prettyprint"><%= '<Value ...>Department of Defense</Value>' %></pre>  
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Indicator Value</h3>
+    <pre class="prettyprint linenums">&lt;Value id=&quot;1&quot; locked=&quot;true&quot; selected=&quot;true&quot;&gt;Department of Defense&lt;/Value&gt;</pre>
+    
+    <h3>Example Indicator Value (Constraint: NONE)</h3>
+    <pre class="prettyprint linenums">&lt;Value locked=&quot;false&quot;&gt;150000.00&lt;/Value&gt;</pre>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v2_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Fillins</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Fillins (Library)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A fillin is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Fillin id="1">...</Fillin>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Attribute</td>
+        <td>String</td>
+        <td>
+          Name of the fillin<br />
+          <br />
+          <pre class="prettyprint"><%= '<Fillin name="Price">...</Fillin>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>source</td>
+        <td>Attribute</td>
+        <td>String</td>
+        <td>
+          Source of Fillin. Government or Vendor<br />
+          <br />
+          <pre class="prettyprint"><%= '<Fillin source="Government">...</Fillin>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>dataType</td>
+        <td>Attribute</td>
+        <td>String</td>
+        <td>
+          Data Type of fillin.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Fillin dataType="Numeric">...</Fillin>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>Options</td>
+        <td>Element</td>
+        <td>Options</td>
+        <td>
+          Only present when dataType is Choose<br />
+          <br />
+          <pre class="prettyprint"><%= '<Options>...</Options>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Option</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Options for Fillin<br />
+          <br />
+          <pre class="prettyprint"><%= '<Option>Steal</option>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Fillins</h3>
+    <pre class="prettyprint linenums">
+&lt;Fillins&gt;
+  &lt;Fillin id=&quot;1&quot; name=&quot;Employee Count&quot; source=&quot;Government&quot; dataType=&quot;Numeric&quot;&gt;&lt;/Fillin&gt;
+  &lt;Fillin id=&quot;2&quot; name=&quot;Location&quot; source=&quot;Government&quot; dataType=&quot;Choose&quot;&gt;
+    &lt;Options&gt;
+      &lt;Option&gt;On-Site&lt;/Option&gt;
+      &lt;Option&gt;Off-Site&lt;/Option&gt;
+    &lt;/Options&gt;
+  &lt;/Fillin&gt;
+&lt;/Fillins&gt;</pre>
+  </div>
+</div>

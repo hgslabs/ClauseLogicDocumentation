@@ -1,0 +1,137 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li><%= link_to 'Resource Objects', v2_resource_objects_path %> <span class="divider">/</span></li>
+    <li class="active">Clause</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Clause (Library)</h1>
+    </div>
+  </div>
+<% end %>
+
+<p>A clause is...</p>
+<br />
+<div class="row">
+  <div class="span12">
+    <table class="table">
+      <tr>
+        <th>Field</th>
+        <th>XML Type</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Attribute</td>
+        <td>Integer</td>
+        <td>
+          Unique ID<br />
+          <br />
+          <pre class="prettyprint"><%= '<Clause id="1">...</Clause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>referenceAllowed</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates whether or not Incorporation by Reference is allowed.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Clause referenceAllowed="true">...</Clause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>provision</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates whether or not this is a provision or a clause.<br />
+          <br />
+          <pre class="prettyprint"><%= '<Clause provision="false">...</Clause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Clause Number<br />
+          <br />
+          <pre class="prettyprint"><%= '<Number>3.503-2</Number>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Regulation</td>
+        <td>Element</td>
+        <td><%= link_to 'Regulation', v2_resource_objects_library_regulation_path %></td>
+        <td>
+          The regulation to which the prescription belongs<br />
+          <br />
+          <pre class="prettyprint"><%= '<Regulation id="1">...</Regulation>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>Section</td>
+        <td>Element</td>
+        <td><%= link_to 'Section', v2_resource_objects_library_section_path %></td>
+        <td>
+          The UCF section to which the clause/provision belongs<br />
+          <br />
+          <pre class="prettyprint"><%= '<Section id="1">...</Section>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>ClauseVariation</td>
+        <td>Element</td>
+        <td><%= link_to 'ClauseVariation', v2_resource_objects_library_clause_variation_path %></td>
+        <td>
+          Describes the type of variation (Alternate or Deviation)<br />
+          <br />
+          <pre class="prettyprint"><%= '<ClauseVariation>...</ClauseVariation>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>Revision</td>
+        <td>Element</td>
+        <td><%= link_to 'Clause Revision', v2_resource_objects_library_clause_revision_path %></td>
+        <td>
+          The effective revision for this clause/provision<br />
+          <br />
+          <pre class="prettyprint"><%= '<Revision id="6">...</Revision>' %></pre> 
+        </td>
+      </tr>
+    </table>
+    
+    <h3>Example Clause</h3>
+    <pre class="prettyprint linenums">
+&lt;Clause id=&quot;1&quot; referenceAllowed=&quot;true&quot; provision=&quot;false&quot;&gt;
+  &lt;Number&gt;52.202-1&lt;/Number&gt;
+  &lt;Regulation id=&quot;1&quot;&gt;FAR&lt;/Regulation&gt;
+  &lt;Section id=&quot;1&quot;&gt;I&lt;/Section&gt;
+  &lt;ClauseVariation&gt;
+    &lt;AlternateOrDeviation&gt;Alternate&lt;/AlternateOrDeviation&gt;
+    &lt;VariationName&gt;1&lt;/VariationName&gt;
+  &lt;/ClauseVariation&gt;
+  &lt;Revision id=&quot;1&quot; isEditable=&quot;false&quot;&gt;
+    &lt;Title&gt;Clause Title&lt;/Title&gt;
+    &lt;Body&gt;
+      &lt;![CDATA[Clause Text]]&gt;
+    &lt;/Body&gt;
+    &lt;EffectiveStartDate&gt;01/01/2012&lt;/EffectiveStartDate&gt;
+    &lt;EffectiveEndDate/&gt;
+    &lt;Fillins&gt;
+      &lt;Fillin id=&quot;1&quot; name=&quot;Employee Count&quot; source=&quot;Government&quot; dataType=&quot;Numeric&quot;&gt;&lt;/Fillin&gt;
+      &lt;Fillin id=&quot;2&quot; name=&quot;Location&quot; source=&quot;Government&quot; dataType=&quot;Choose&quot;&gt;
+        &lt;Options&gt;
+          &lt;Option&gt;On-Site&lt;/Option&gt;
+          &lt;Option&gt;Off-Site&lt;/Option&gt;
+        &lt;/Options&gt;
+      &lt;/Fillin&gt;
+    &lt;/Fillins&gt;
+  &lt;/Revision&gt;
+&lt;/Clause&gt;</pre>
+  </div>
+</div>
