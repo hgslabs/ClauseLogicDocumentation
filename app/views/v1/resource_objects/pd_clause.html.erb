@@ -34,16 +34,6 @@
         </td>
       </tr>
       <tr>
-        <td>fullText</td>
-        <td>Attribute</td>
-        <td>Boolean</td>
-        <td>
-          Indicates if the clause is to be displayed in full text.<br />
-          <br />
-          <pre class="prettyprint"><%= '<ProcurementDocumentClause fullText="false">...</ProcurementDocumentClause>' %></pre>  
-        </td>
-      </tr>
-      <tr>
         <td>prescribed</td>
         <td>Attribute</td>
         <td>Boolean</td>
@@ -64,13 +54,73 @@
         </td>
       </tr>
       <tr>
-        <td>Clause</td>
-        <td>Element</td>
-        <td><%= link_to 'Clause', v1_resource_objects_library_clause_path %></td>
+        <td>referenceAllowed</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
         <td>
-          The actual Clause object.<br />
+          Indicates whether or not Incorporation by Reference is allowed.<br />
           <br />
-          <pre class="prettyprint"><%= '<Clause>...</Clause>' %></pre> 
+          <pre class="prettyprint"><%= '<ProcurementDocumentClause referenceAllowed="true">...</Clause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>provision</td>
+        <td>Attribute</td>
+        <td>Boolean</td>
+        <td>
+          Indicates whether or not this is a provision or a clause.<br />
+          <br />
+          <pre class="prettyprint"><%= '<ProcurementDocumentClause provision="false">...</Clause>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>Element</td>
+        <td>String</td>
+        <td>
+          Clause Number<br />
+          <br />
+          <pre class="prettyprint"><%= '<Number>3.503-2</Number>' %></pre>  
+        </td>
+      </tr>
+      <tr>
+        <td>Regulation</td>
+        <td>Element</td>
+        <td><%= link_to 'Regulation', v1_resource_objects_library_regulation_path %><br /><span class="muted">(minimized)</span></td>
+        <td>
+          The regulation to which the prescription belongs<br />
+          <br />
+          <pre class="prettyprint"><%= '<Regulation id="1">FAR</Regulation>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>Section</td>
+        <td>Element</td>
+        <td><%= link_to 'Section', v1_resource_objects_library_section_path %><br /><span class="muted">(minimized)</span></td>
+        <td>
+          The UCF section to which the clause/provision belongs<br />
+          <br />
+          <pre class="prettyprint"><%= '<Section id="1">I</Section>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>ClauseVariation</td>
+        <td>Element</td>
+        <td><%= link_to 'ClauseVariation', v1_resource_objects_library_clause_variation_path %></td>
+        <td>
+          Describes the type of variation (Alternate or Deviation)<br />
+          <br />
+          <pre class="prettyprint"><%= '<ClauseVariation>...</ClauseVariation>' %></pre> 
+        </td>
+      </tr>
+      <tr>
+        <td>Revision</td>
+        <td>Element</td>
+        <td><%= link_to 'Clause Revision', v1_resource_objects_library_clause_revision_path %></td>
+        <td>
+          The effective revision for this clause/provision<br />
+          <br />
+          <pre class="prettyprint"><%= '<Revision id="6">...</Revision>' %></pre> 
         </td>
       </tr>
     </table>
