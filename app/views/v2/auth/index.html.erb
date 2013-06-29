@@ -1,0 +1,114 @@
+<% content_for :page_header do %>
+  <br />
+  <ul class="breadcrumb">
+    <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
+    <li class="active">Authentication</li>
+  </ul>
+  <div class="row">
+    <div class="span12">
+      <h1>Authentication</h1>
+    </div>
+  </div>
+<% end %>
+
+<h2>Overview</h2>
+<p>
+  The Clause Logic Service REST API requires authentication.  Authentication is based on the Client Credentials 
+  Grant flow of the OAuth 2 specification.
+</p>
+<p>
+  The Client Credentials Grant flow requires the following steps:<br />
+  <ul>
+    <li>An application encodes its client id and secret to become a set of credentials.</li>
+    <li>An application makes a request to the POST /api/oauth2/token endpoint to exchange the credentials for a bearer token.</li>
+    <li>An application uses the bearer token to authenticate with the REST API.</li>
+  </ul>
+</p>
+<br />
+<h2>Issuing a request</h2>
+<h3>Step 1: Encode client id and secret</h3>
+<ol>
+  <li>URL encode the client id and secret.</li>
+  <li>Concatenate the encoded id, a colon ":", and the encoded secret into a single string.</li>
+  <li>Base64 encode the concatenated string.</li>
+</ol>
+<br />
+
+<table class="table table-striped">
+  <tr>
+    <td nowrap><span class="text-warning">Client id</span></td>
+    <td><span class="text-error">M2U1NGY2ZGQtOTNhZC00MWQ0LTgwNTUtMzJmYzFjNTNhZjE0</span></td>
+  </tr>
+  <tr>
+    <td nowrap><span class="text-warning">Client secret</span></td>
+    <td><span class="text-error">NDUxMzM3MmUtODdmMC00OTI0LThlNTgtMzEwMDQyODA4YTA5</span></td>
+  </tr>
+  <tr>
+    <td nowrap><span class="text-warning">URL Encoded Client id</span></td>
+    <td><span class="text-error">M2U1NGY2ZGQtOTNhZC00MWQ0LTgwNTUtMzJmYzFjNTNhZjE0</span></td>
+  </tr>
+  <tr>
+    <td nowrap><span class="text-warning">URL Encoded Client secret</span></td>
+    <td><span class="text-error">NDUxMzM3MmUtODdmMC00OTI0LThlNTgtMzEwMDQyODA4YTA5</span></td>
+  </tr>
+  <tr>
+    <td nowrap><span class="text-warning">Concatenated String</span></td>
+    <td><span class="text-error">M2U1NGY2ZGQtOTNhZC00MWQ0LTgwNTUtMzJmYzFjNTNhZjE0:NDUxMzM3MmUtODdmMC00OTI<br />0LThlNTgtMzEwMDQyODA4YTA5</span></td>
+  </tr>
+  <tr>
+    <td nowrap><span class="text-warning">Base64 encoded string</span></td>
+    <td><span class="text-error">TTJVMU5HWTJaR1F0T1ROaFpDMDBNV1EwTFRnd05UVXRNekptWXpGak5UTmhaakUwOk5EVXhN<br />ek0zTW1VdE9EZG1NQzAwT1RJMExUaGxOVGd0TXpFd01EUXlPREE0WVRBNQ==</span></td>
+  </tr>
+</table>
+<br />
+
+<h3>Step 2: Obtain a bearer token</h3>
+<p>The Base64 encoded string from step 1 must be exchanged for a bearer token by issuing a request to POST api/oauth2/token</p>
+<ul>
+  <li>The request must use the HTTP POST method</li>
+  <li>The request must include an Authorization header:<br />
+      Authorization: Basic {Base64 encoded string from step 1}</li>
+  <li>The request must include the following Content-Type header:<br />
+      Content-Type: application/x-www-form-urlencoded;charset=UTF-8</li>
+  <li>The body of the request must be grant_type=client_credentials</li>
+</ul>
+<br />
+
+<h4>Example request:</h4>
+<div class="well">
+  <p>
+    POST <span class="text-info">api/oauth2/token</span> HTTP/1.1<br />
+    Host: integration.clause-logic.com<br />
+    <span class="text-warning">Authorization</span>: <span class="text-error">Basic eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==</span><br />
+    <span class="text-warning">Content-Type</span>: <span class="text-error">application/x-www-form-urlencoded;charset=UTF-8</span><br />
+    <br />
+    <span class="text-warning">grant_type</span>=<span class="text-error">client_credentials</span>
+  </p>
+</div>
+
+<h4>Example response:</h4>
+<div class="well">
+  <p>
+    HTTP/1.1 200 OK<br />
+    Status: 200 OK<br />
+    Content-Type: application/json; charset=utf-8<br />
+    <br />
+    {"token_type":"bearer", "access_token":"<span class="text-error">ZDc1ZjZjNDVjYWUyNzM5OTNkNmEzNGNkZmUzOThjODVkNzE1ZTE5MWViZmU1Yz<br />c0MGJlMTE4ODY1Zjg1MzBkYmNhZjlkNjY3ODA3ZmRhZTFjYTM5NmMwOTU0MDBkMGFi</span>"}
+  </p>
+</div>
+<br />
+
+<h3>Step 3: Access the API using the bearer token for authentication</h3>
+<p>
+  To authenticate using the bearer token, the request must include an Authorization header:<br />
+  Authorization: Bearer {Base64 encoded bearer token from step 2}.
+</p>
+
+<h4>Example request:</h4>
+<div class="well">
+  <p>
+    GET <span class="text-info">api/v2/regulations.json</span> HTTP/1.1<br />
+    Host: integration.clause-logic.com<br />
+    <span class="text-warning">Authorization</span>: <span class="text-error">Bearer ZDc1ZjZjNDVjYWUyNzM5OTNkNmEzNGNkZmUzOThjODVkNzE1ZTE5MWViZmU1Yzc0MGJlMTE4ODY1Zjg<br />1MzBkYmNhZjlkNjY3ODA3ZmRhZTFjYTM5NmMwOTU0MDBkMGFi</span><br />
+  </p>
+</div>

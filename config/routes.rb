@@ -139,8 +139,7 @@ ClauseLogicDocumentation::Application.routes.draw do
     get 'resources/procurement_document/regulations_update' => "resources#pd_regulations_update"
     get 'resources/general/timestamp' => "resources#general_timestamp"
 
-    get 'authentication/request_types' => "auth#request_types"
-    get 'authentication/signature' => "auth#signature"
+    get 'authentication' => "auth#index"
       
     get 'guides/create_procurement_document' => "guides#create_procurement_document"
     get 'guides/specify_indicators' => "guides#specify_indicators"
