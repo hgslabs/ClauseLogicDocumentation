@@ -11,7 +11,7 @@
             :version_select, 
             options_for_select(
               [["Version 1", v1_root_path], ["Version 2", v2_root_path]], 
-              request.fullpath.include?(v1_root_path) ? v1_root_path : v2_root_path
+              controller.class.name.split("::").first == 'V1' ? v1_root_path : v2_root_path
             )
           ) %>
         </div>
