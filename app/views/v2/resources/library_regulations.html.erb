@@ -15,7 +15,7 @@
 <div class="row">
   <div class="span8">
     <h3>Resource URL</h3>
-    <p>/api/v1/regulations.format</p>
+    <p>/api/v2/regulations.json</p>
     <br />
     <h3>Example Request</h3>
     <table class="table">
@@ -62,22 +62,12 @@
       <h3>Resource Information</h3>
       <table class="table">
         <tr>
-          <td>Request Type</td>
-          <td><%= link_to 'Non Authenticated', v2_authentication_request_types_path %></td>
-        </tr>
-        <tr>
           <td>Response Formats</td>
-          <td>xml</td>
+          <td>json</td>
         </tr>
         <tr>
           <td>HTTP Method</td>
           <td>GET</td>
-        </tr>
-        <tr>
-          <td>Optional Parameters</td>
-          <td>
-            <em>page</em> - enables pagination. (example page=1)
-          </td>
         </tr>
         <tr>
           <td>Response Object</td>

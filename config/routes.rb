@@ -84,23 +84,16 @@ ClauseLogicDocumentation::Application.routes.draw do
     get 'whats_new' => "welcome#whats_new"
 
     # Resource Objects Documentation
-    get 'resource_objects' => "resource_objects#index"
-    get 'resource_objects/library/clause' => "resource_objects#library_clause"
-    get 'resource_objects/library/clause_revision' => "resource_objects#library_clause_revision"
-    get 'resource_objects/library/fillins' => "resource_objects#library_fillins"
-    get 'resource_objects/library/clause_variation' => "resource_objects#library_clause_variation"
-    get 'resource_objects/library/indicator' => "resource_objects#library_indicator"
-    get 'resource_objects/library/indicator_value' => "resource_objects#library_indicator_value"
-    get 'resource_objects/library/prescription' => "resource_objects#library_prescription"
-    get 'resource_objects/library/prescription_revision' => "resource_objects#library_prescription_revision"
-    get 'resource_objects/library/regulation' => "resource_objects#library_regulation"
-    get 'resource_objects/library/section' => "resource_objects#library_section"
-    get 'resource_objects/procurement_document/clat' => "resource_objects#pd_clat"
-    get 'resource_objects/procurement_document/clause' => "resource_objects#pd_clause"
-    get 'resource_objects/procurement_document/indicator' => "resource_objects#pd_indicator"
-    get 'resource_objects/procurement_document/indicator_value' => "resource_objects#pd_indicator_value"
-    get 'resource_objects/procurement_document/procurement_document' => "resource_objects#pd_procurement_document"
-    get 'resource_objects/procurement_document/regulation' => "resource_objects#pd_regulation"
+    resources :resource_objects, :only => [:index] do
+      get 'clause', :on => :collection
+      get 'clause_revision', :on => :collection
+      get 'indicator', :on => :collection
+      get 'indicator_value', :on => :collection
+      get 'prescription', :on => :collection
+      get 'prescription_revision', :on => :collection
+      get 'regulation', :on => :collection
+      get 'section', :on => :collection
+    end
       
     # Resources Documentation
     get 'resources' => "resources#index"

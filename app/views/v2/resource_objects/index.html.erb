@@ -1,44 +1,10 @@
-<% content_for :page_header do %>
-  <br />
+<% content_for :breadcrumbs do %>
   <ul class="breadcrumb">
     <li><%= link_to 'Documentation', v2_root_path %> <span class="divider">/</span></li>
     <li class="active">Resource Objects</li>
   </ul>
-  <div class="row">
-    <div class="span12">
-      <h1>Resource Objects</h1>
-    </div>
-  </div>
 <% end %>
 
-<p>Here is a list of objects you will encounter while working with the REST API.  There are two main types of resource objects: Library and Contract.  Library resources pertain to regulation specific information such as clauses and prescriptions.  Contract resources pertain to contract specific information.</p>
-<br />
-<div class="row">
-  <div class="span6">
-    <h3>Library Resource Objects</h3>
-    <br />
-    <ul>
-      <li><%= link_to 'Clause', v2_resource_objects_library_clause_path %></li>
-      <li><%= link_to 'Clause Revision', v2_resource_objects_library_clause_revision_path %></li>
-      <li><%= link_to 'ClauseVariation', v2_resource_objects_library_clause_variation_path %></li>
-      <li><%= link_to 'Indicator', v2_resource_objects_library_indicator_path %></li>
-      <li><%= link_to 'Indicator Value', v2_resource_objects_library_indicator_value_path %></li>
-      <li><%= link_to 'Prescription', v2_resource_objects_library_prescription_path %></li>
-      <li><%= link_to 'Prescription Revision', v2_resource_objects_library_prescription_revision_path %></li>
-      <li><%= link_to 'Regulation', v2_resource_objects_library_regulation_path %></li>
-      <li><%= link_to 'Section', v2_resource_objects_library_section_path %></li>
-    </ul>
-  </div>
-  <div class="span6">
-    <h3>Procurement Document Resource Objects</h3>
-    <br />
-    <ul>
-      <li><%= link_to 'CLAT', v2_resource_objects_procurement_document_clat_path %></li>
-      <li><%= link_to 'Clause', v2_resource_objects_procurement_document_clause_path %></li>
-      <li><%= link_to 'Indicator', v2_resource_objects_procurement_document_indicator_path %></li>
-      <li><%= link_to 'Indicator Value', v2_resource_objects_procurement_document_indicator_value_path %></li>
-      <li><%= link_to 'Procurement Document', v2_resource_objects_procurement_document_procurement_document_path %></li>
-      <li><%= link_to 'Regulation', v2_resource_objects_procurement_document_regulation_path %></li>
-    </ul>
-  </div>
-</div>
+<% content_for :sidebar do %>
+  <%= render partial: 'v2/resource_objects/sidebar' %>
+<% end %>

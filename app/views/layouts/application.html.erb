@@ -11,27 +11,41 @@
   <%= render 'shared/noscript' %>
   <div id="siteContainer">
     <%= render 'shared/header' %>
-  
+
     <div class="container">
+      
       <div class="row">
-        <div class="span12">
+        <% if content_for?(:breadcrumbs) %>
+        <div id="breadCrumbs" class="span12">
+          <%= render 'shared/breadcrumbs' %>
+        </div>
+        <% end %>
+        
+        <% if content_for?(:page_header) %>
+        <div id="pageHeader" class="span12">
+          <%= yield :page_header %>
+        </div>
+        <% end %>        
+        
+        <% unless flash.empty? %>
           <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>">
               <a class="close" data-dismiss="alert">×</a>
               <%= value %>
             </div>
           <% end %>
+        <% end %>
+        
+        <% if content_for(:sidebar) %>
+        <div id="sidebar" class="span4">
+          <%= yield :sidebar %>
         </div>
-      </div>
-      <div class="row">
-        <div id="pageHeader" class="span12">
-          <%= yield :page_header %>
-        </div>
-      </div>
-      <div class="row">
-        <div id="content" class="span12">
+        <% end %>
+        
+        <div id="content" class="<%= content_for?(:sidebar) ? 'span8' : 'span12' %>">
           <%= yield %>
         </div>
+        
       </div>
     </div>
   
