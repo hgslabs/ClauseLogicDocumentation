@@ -1,8 +1,8 @@
 class V2::PrescriptionRevision < V2::Resource::Base
-  has_field 'id',        type: :numeric, compact: :always,  complete: :always, description: 'A unique identifier for the revision'
-  has_field 'body',      type: :string,  compact: :some,    complete: :always, description: 'Prescription text (HTML)'
-  has_field 'startDate', type: :string,  compact: :always,  complete: :always, description: 'Effective Start Date'
-  has_field 'endDate',   type: :string,  compact: :never,   complete: :always, description: 'Effective End Date'
+  has_field 'id',        type: :numeric, description: 'A unique identifier for the revision'
+  has_field 'body',      type: :string,  description: 'Prescription text (HTML)'
+  has_field 'startDate', type: :string,  description: 'Effective Start Date'
+  has_field 'endDate',   type: :string,  description: 'Effective End Date'
   
   @example = {
     id: 1, 
