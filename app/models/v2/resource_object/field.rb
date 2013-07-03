@@ -1,4 +1,4 @@
-module V2::Resource
+module V2::ResourceObject
   module Field
     
     def self.included(base)

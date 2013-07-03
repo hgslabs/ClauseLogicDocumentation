@@ -1,4 +1,4 @@
-class V2::Fillin < V2::Resource::Base
+class V2::ResourceObject::Fillin < V2::ResourceObject::Base
   has_field 'id',       type: :numeric, description: 'A unique identifier for the fill-in'
   has_field 'name',     type: :numeric, description: 'Fill-In name'
   has_field 'source',   type: :numeric, description: 'Government or Vendor'

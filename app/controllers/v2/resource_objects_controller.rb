@@ -5,52 +5,52 @@ class V2::ResourceObjectsController < ApplicationController
   end
   
   def clause
-    @resource = V2::Clause
+    @resource = V2::ResourceObject::Clause
     render_resource_object
   end
   
   def clause_revision
-    @resource = V2::ClauseRevision
+    @resource = V2::ResourceObject::ClauseRevision
     render_resource_object
   end
   
   def clause_variation
-    @resource = V2::ClauseVariation
+    @resource = V2::ResourceObject::ClauseVariation
     render_resource_object
   end
   
   def fillin
-    @resource = V2::Fillin
+    @resource = V2::ResourceObject::Fillin
     render_resource_object  
   end
   
   def indicator
-    @resource = V2::Indicator
+    @resource = V2::ResourceObject::Indicator
     render_resource_object
   end
   
   def indicator_value
-    @resource = V2::IndicatorValue
+    @resource = V2::ResourceObject::IndicatorValue
     render_resource_object
   end
   
   def prescription
-    @resource = V2::Prescription
+    @resource = V2::ResourceObject::Prescription
     render_resource_object
   end
   
   def prescription_revision
-    @resource = V2::PrescriptionRevision
+    @resource = V2::ResourceObject::PrescriptionRevision
     render_resource_object
   end
   
   def regulation
-    @resource = V2::Regulation
+    @resource = V2::ResourceObject::Regulation
     render_resource_object
   end
   
   def section
-    @resource = V2::Section
+    @resource = V2::ResourceObject::Section
     render_resource_object
   end
   

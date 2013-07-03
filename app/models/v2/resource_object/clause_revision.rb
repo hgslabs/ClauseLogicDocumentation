@@ -1,4 +1,4 @@
-class V2::ClauseRevision < V2::Resource::Base
+class V2::ResourceObject::ClauseRevision < V2::ResourceObject::Base
   has_field 'id',        type: :numeric, description: 'A unique identifier for the revision'
   has_field 'title',     type: :string,  description: 'Clause title'
   has_field 'body',      type: :string,  description: 'Clause text (HTML)'
@@ -11,7 +11,7 @@ class V2::ClauseRevision < V2::Resource::Base
     id: 1,
     title: 'Clause Title',
     body: '... clause text ...',
-    fillins: [V2::Fillin.example], 
+    fillins: [V2::ResourceObject::Fillin.example], 
     startDate: '2011-01-01',
     endDate: '2013-12-31',
     editable: false

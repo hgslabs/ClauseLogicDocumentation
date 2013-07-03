@@ -1,4 +1,4 @@
-class V2::Regulation < V2::Resource::Base
+class V2::ResourceObject::Regulation < V2::ResourceObject::Base
   has_field 'id',    type: :numeric, compact: :always, description: 'A unique identifier for the regulation'
   has_field 'name',  type: :string,  compact: :never,  description: 'Regulation name'
   has_field 'title', type: :string,  compact: :always, description: 'Regulation title'

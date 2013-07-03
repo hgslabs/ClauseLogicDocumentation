@@ -1,4 +1,4 @@
-class V2::Indicator < V2::Resource::Base
+class V2::ResourceObject::Indicator < V2::ResourceObject::Base
   has_field 'id',         type: :numeric, description: 'A unique identifier for the indicator'
   has_field 'name',       type: :string,  description: 'Indicator name'
   has_field 'dataType',   type: :string,  description: 'Data Type'
@@ -10,6 +10,6 @@ class V2::Indicator < V2::Resource::Base
     name: 'Document Type',
     dataType: 'text',
     constraint: 'Pick Many',
-    values: [ V2::IndicatorValue.example ]
+    values: [ V2::ResourceObject::IndicatorValue.example ]
   }
 end

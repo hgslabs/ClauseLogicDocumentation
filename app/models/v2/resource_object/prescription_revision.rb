@@ -1,4 +1,4 @@
-class V2::PrescriptionRevision < V2::Resource::Base
+class V2::ResourceObject::PrescriptionRevision < V2::ResourceObject::Base
   has_field 'id',        type: :numeric, description: 'A unique identifier for the revision'
   has_field 'body',      type: :string,  description: 'Prescription text (HTML)'
   has_field 'startDate', type: :string,  description: 'Effective Start Date'
