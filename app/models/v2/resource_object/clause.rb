@@ -1,12 +1,12 @@
 class V2::ResourceObject::Clause < V2::ResourceObject::Base
-  has_field 'id',               type: :numeric, description: 'A unique identifier for the clause'
-  has_field 'number',           type: :string,  description: 'Clause number'
-  has_field 'referenceAllowed', type: :boolean, description: 'If clause can be incorporated by reference'
-  has_field 'provision',        type: :boolean, description: 'If this is a clause'
-  has_field 'regulation',       type: :object,  description: 'Parent Regulation object'
-  has_field 'section',          type: :object,  description: 'UCF Section object of the clause'
-  has_field 'clauseVariation',  type: :object,  description: 'Alternate or Deviation'
-  has_field 'revision',         type: :object,  description: 'Clause Revision object'
+  field 'id',               type: :numeric, description: 'A unique identifier for the clause'
+  field 'number',           type: :string,  description: 'Clause number'
+  field 'referenceAllowed', type: :boolean, description: 'If clause can be incorporated by reference'
+  field 'provision',        type: :boolean, description: 'If this is a clause'
+  field 'regulation',       type: :object,  description: 'Parent Regulation object'
+  field 'section',          type: :object,  description: 'UCF Section object of the clause'
+  field 'clauseVariation',  type: :object,  description: 'Alternate or Deviation'
+  field 'revision',         type: :object,  description: 'Clause Revision object'
 
   @example = {
     id: 1, 

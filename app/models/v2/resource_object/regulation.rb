@@ -1,8 +1,8 @@
 class V2::ResourceObject::Regulation < V2::ResourceObject::Base
-  has_field 'id',    type: :numeric, compact: :always, description: 'A unique identifier for the regulation'
-  has_field 'name',  type: :string,  compact: :never,  description: 'Regulation name'
-  has_field 'title', type: :string,  compact: :always, description: 'Regulation title'
-  has_field 'url',   type: :string,  compact: :never,  description: 'URL of regulation website'
+  field 'id',    type: :numeric, compact: :always, description: 'A unique identifier for the regulation'
+  field 'name',  type: :string,  compact: :never,  description: 'Regulation name'
+  field 'title', type: :string,  compact: :always, description: 'Regulation title'
+  field 'url',   type: :string,  compact: :never,  description: 'URL of regulation website'
   
   @example = {
     id: 1, 

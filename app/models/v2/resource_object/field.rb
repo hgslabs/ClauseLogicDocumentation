@@ -7,7 +7,7 @@ module V2::ResourceObject
     
     module ClassMethods
 
-      def has_field(name, options = {})
+      def field(name, options = {})
         @_fields ||= {}
         @_fields[name] = {} if @_fields[name].nil?
         @_fields[name][:type] = options[:type] || :string
@@ -21,5 +21,6 @@ module V2::ResourceObject
         @_fields
       end
     end
+    
   end
 end

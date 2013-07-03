@@ -1,11 +1,11 @@
 class V2::ResourceObject::ClauseRevision < V2::ResourceObject::Base
-  has_field 'id',        type: :numeric, description: 'A unique identifier for the revision'
-  has_field 'title',     type: :string,  description: 'Clause title'
-  has_field 'body',      type: :string,  description: 'Clause text (HTML)'
-  has_field 'fillins',   type: :array,   complete: :some, description: 'Array of Fill-ins for the clause'
-  has_field 'startDate', type: :string,  description: 'Effective Start Date'
-  has_field 'endDate',   type: :string,  description: 'Effective End Date'
-  has_field 'editable',  type: :boolean, description: 'Whether the clause is editable'
+  field 'id',        type: :numeric, description: 'A unique identifier for the revision'
+  field 'title',     type: :string,  description: 'Clause title'
+  field 'body',      type: :string,  description: 'Clause text (HTML)'
+  field 'fillins',   type: :array,   complete: :some, description: 'Array of Fill-ins for the clause'
+  field 'startDate', type: :string,  description: 'Effective Start Date'
+  field 'endDate',   type: :string,  description: 'Effective End Date'
+  field 'editable',  type: :boolean, description: 'Whether the clause is editable'
 
   @example = {
     id: 1,

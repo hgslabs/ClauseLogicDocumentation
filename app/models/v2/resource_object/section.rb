@@ -1,7 +1,7 @@
 class V2::ResourceObject::Section < V2::ResourceObject::Base
-  has_field 'id',    type: :numeric, compact: :always, description: 'A unique identifier for the section'
-  has_field 'name',  type: :string,  compact: :always, description: 'Section name'
-  has_field 'title', type: :string,  compact: :never,  description: 'Section title'
+  field 'id',    type: :numeric, compact: :always, description: 'A unique identifier for the section'
+  field 'name',  type: :string,  compact: :always, description: 'Section name'
+  field 'title', type: :string,  compact: :never,  description: 'Section title'
 
   @example = {
     id: 1, 
