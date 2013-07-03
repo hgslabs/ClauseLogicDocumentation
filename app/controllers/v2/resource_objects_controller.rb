@@ -14,6 +14,16 @@ class V2::ResourceObjectsController < ApplicationController
     render_resource_object
   end
   
+  def clause_variation
+    @resource = V2::ClauseVariation
+    render_resource_object
+  end
+  
+  def fillin
+    @resource = V2::Fillin
+    render_resource_object  
+  end
+  
   def indicator
     @resource = V2::Indicator
     render_resource_object

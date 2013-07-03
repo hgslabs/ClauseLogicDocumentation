@@ -87,6 +87,8 @@ ClauseLogicDocumentation::Application.routes.draw do
     resources :resource_objects, :only => [:index] do
       get 'clause', :on => :collection
       get 'clause_revision', :on => :collection
+      get 'clause_variation', :on => :collection
+      get 'fillin', :on => :collection
       get 'indicator', :on => :collection
       get 'indicator_value', :on => :collection
       get 'prescription', :on => :collection

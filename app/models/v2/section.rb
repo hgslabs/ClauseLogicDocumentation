@@ -8,5 +8,10 @@ class V2::Section < V2::Resource::Base
     name: 'E', 
     title: 'Inspection & Acceptance'
   }
+  
+  @compact = {
+    id: 1, 
+    name: 'E'
+  }
 
 end
