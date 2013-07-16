@@ -5,7 +5,7 @@ class V2::ResourceObject::Clause < V2::ResourceObject::Base
   field 'provision',        type: :boolean, description: 'If this is a clause'
   field 'regulation',       type: :object,  description: 'Parent Regulation object'
   field 'section',          type: :object,  description: 'UCF Section object of the clause'
-  field 'clauseVariation',  type: :object,  description: 'Alternate or Deviation'
+  field 'variation',        type: :object,  description: 'Alternate or Deviation'
   field 'revision',         type: :object,  description: 'Clause Revision object'
 
   @example = {
@@ -15,7 +15,7 @@ class V2::ResourceObject::Clause < V2::ResourceObject::Base
     provision: false,
     regulation: V2::ResourceObject::Regulation.compact,
     section: V2::ResourceObject::Section.compact,
-    clauseVariation: V2::ResourceObject::ClauseVariation.example,
+    variation: V2::ResourceObject::ClauseVariation.example,
     revision: V2::ResourceObject::ClauseRevision.example
   }
 
