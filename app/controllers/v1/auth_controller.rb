@@ -1,3 +1,5 @@
+require 'builder'
+
 class V1::AuthController < ApplicationController
 
   def signature
