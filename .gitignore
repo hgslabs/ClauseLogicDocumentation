@@ -1,3 +1,5 @@
+.idea
+bin/*
 .bundle
 clsadmin.pem
 config/database.yml
