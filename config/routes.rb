@@ -1,6 +1,6 @@
 ClauseLogicDocumentation::Application.routes.draw do
 
-  namespace "v1" do    
+  namespace "v1" do
     root :to => "welcome#index"
 
     # Resource Objects Documentation
@@ -20,7 +20,7 @@ ClauseLogicDocumentation::Application.routes.draw do
     get 'resource_objects/procurement_document/indicator_value' => "resource_objects#pd_indicator_value"
     get 'resource_objects/procurement_document/procurement_document' => "resource_objects#pd_procurement_document"
     get 'resource_objects/procurement_document/regulation' => "resource_objects#pd_regulation"
-      
+
     # Resources Documentation
     get 'resources' => "resources#index"
     get 'resources/library_clauses' => "resources#library_clauses"
@@ -60,14 +60,14 @@ ClauseLogicDocumentation::Application.routes.draw do
 
     get 'authentication/request_types' => "auth#request_types"
     get 'authentication/signature' => "auth#signature"
-      
+
     get 'guides/create_procurement_document' => "guides#create_procurement_document"
     get 'guides/specify_indicators' => "guides#specify_indicators"
     get 'guides/specify_regulations' => "guides#specify_regulations"
     get 'guides/launch_gui' => "guides#launch_gui"
     get 'guides/api_environments' => 'guides#api_environments'
     get 'guides/overview' => "guides#overview"
-    
+
     # Tutorials
     get 'tutorials/create_procurement_document' => "tutorials#create_procurement_document"
     get 'tutorials/applying_regulations' => "tutorials#applying_regulations"
@@ -78,7 +78,7 @@ ClauseLogicDocumentation::Application.routes.draw do
     get 'api/errors' => "api#errors"
   end
 
-  namespace "v2" do    
+  namespace "v2" do
     root :to => "welcome#index"
 
     get 'whats_new' => "welcome#whats_new"
@@ -87,16 +87,17 @@ ClauseLogicDocumentation::Application.routes.draw do
     resources :resource_objects, :only => [:index] do
       get 'clause', :on => :collection
       get 'clause_revision', :on => :collection
-      get 'clause_variation', :on => :collection
-      get 'fillin', :on => :collection
       get 'indicator', :on => :collection
       get 'indicator_value', :on => :collection
       get 'prescription', :on => :collection
       get 'prescription_revision', :on => :collection
       get 'regulation', :on => :collection
       get 'section', :on => :collection
+      get 'document', :on => :collection
+      get 'document_regulation', :on => :collection
+      get 'document_question', :on => :collection
     end
-      
+
     # Resources Documentation
     get 'resources' => "resources#index"
     get 'resources/library_clauses' => "resources#library_clauses"
@@ -135,14 +136,14 @@ ClauseLogicDocumentation::Application.routes.draw do
     get 'resources/general/timestamp' => "resources#general_timestamp"
 
     get 'authentication' => "auth#index"
-      
+
     get 'guides/create_procurement_document' => "guides#create_procurement_document"
     get 'guides/specify_indicators' => "guides#specify_indicators"
     get 'guides/specify_regulations' => "guides#specify_regulations"
     get 'guides/launch_gui' => "guides#launch_gui"
     get 'guides/api_environments' => 'guides#api_environments'
     get 'guides/overview' => "guides#overview"
-    
+
     # Tutorials
     get 'tutorials/create_procurement_document' => "tutorials#create_procurement_document"
     get 'tutorials/applying_regulations' => "tutorials#applying_regulations"
@@ -152,7 +153,7 @@ ClauseLogicDocumentation::Application.routes.draw do
     # Api Documentation
     get 'api/errors' => "api#errors"
   end
-  
+
   root :to => "v1/welcome#index"
-  
+
 end
